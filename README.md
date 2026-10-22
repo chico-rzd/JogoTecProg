@@ -110,7 +110,7 @@ Instale as extensões **C/C++** (Microsoft) e **CMake Tools** (Microsoft). Ao ab
 ## 2. Primeira compilação
 
 ```
-git clone <URL-DO-REPOSITORIO>
+git clone https://github.com/chico-rzd/JogoTecProg.git
 cd JogoTecProg
 cmake --preset debug
 cmake --build --preset debug
