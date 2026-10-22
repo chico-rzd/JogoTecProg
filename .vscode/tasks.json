@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Configurar (debug)",
+      "type": "process",
+      "command": "cmake",
+      "args": ["--preset", "debug"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Compilar (debug)",
+      "type": "process",
+      "command": "cmake",
+      "args": ["--build", "--preset", "debug"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Executar jogo",
+      "type": "process",
+      "command": "${workspaceFolder}/build/jogo.exe",
+      "options": { "cwd": "${workspaceFolder}" },
+      "dependsOn": "Compilar (debug)",
+      "problemMatcher": []
+    }
+  ]
+}
