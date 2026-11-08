@@ -1,6 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Ente.h"
+
+namespace Entidades {
+    class Ente;
+}
+
+namespace Gerenciadores {
 
 class Gerenciador_Grafico{
     private:
@@ -8,10 +13,14 @@ class Gerenciador_Grafico{
 
     public:
         Gerenciador_Grafico();
-        ~Gerenciador_Grafico();
-        void desenharEnte(Ente* pE);
+        ~Gerenciador_Grafico(); 
+
+    public:
+        
+        void desenharEnte(Entidades::Ente* pE);
         bool JanelaAberta();
         void trataEventos();
         void limparJanela();
         void mostrarConteudoJanela();
 };  
+}

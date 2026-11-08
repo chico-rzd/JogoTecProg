@@ -3,5 +3,4 @@
 int main()
 {   
     Jogo obj;   
-    obj.executar();
 }

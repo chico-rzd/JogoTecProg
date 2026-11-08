@@ -9,7 +9,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(FetchContent)
 
-set(BUILD_SHARED_LIBS OFF)      # SFML estático: sem DLLs do SFML
+# SFML estatico sem DLLs do SFML
+set(BUILD_SHARED_LIBS OFF)      
 set(SFML_BUILD_AUDIO OFF)
 set(SFML_BUILD_NETWORK OFF)
 

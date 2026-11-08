@@ -1,21 +1,28 @@
 #include "Gerenciador_Grafico.h"
+#include "Ente.h"
 #include "stdafx.h"
 
-Gerenciador_Grafico::Gerenciador_Grafico() : Window(sf::VideoMode(1280, 700), "Cats Run")
-{ 
+namespace Gerenciadores {
 
+Gerenciador_Grafico::Gerenciador_Grafico() : Window(sf::VideoMode(1280, 700), "Cats Run")
+{
+    Window.setFramerateLimit(60);
 }
 
 Gerenciador_Grafico::~Gerenciador_Grafico()
-{
+{}
 
+void Gerenciador_Grafico::desenharEnte(Entidades::Ente* pE)
+{ 
+    if(pE){
+        sf::RectangleShape* pF =  pE->getFigura();
+        if(pF)
+            Window.draw(*pF);
+    }
 }
 
-void Gerenciador_Grafico::desenharEnte(Ente* pE)
-{
 
-}
-
+/*funções para a janela*/
 bool Gerenciador_Grafico::JanelaAberta(){
     return Window.isOpen();
 }
@@ -36,13 +43,13 @@ void Gerenciador_Grafico::trataEventos(){
 }
 
 void Gerenciador_Grafico::limparJanela(){
-    return Window.clear(sf::Color::Cyan);
+    Window.clear(sf::Color::White);
 }
 
 void Gerenciador_Grafico::mostrarConteudoJanela(){
-    return Window.display();
+     Window.display();
 }
 // sf::RenderWindow Gerenciador_Grafico::getWindow(){
 //     return *Window;
 // }
-
+}
