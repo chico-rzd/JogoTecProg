@@ -1,30 +1,74 @@
 #include "Jogo.h"
 #include "Jogador.h"
-// #include "Entidade.h"
+#define UM_JOGADOR 0
+#define DOIS_JOGADORES 1
 
-Jogo::Jogo() {
+Jogo::Jogo() : pJogador1(NULL), pJogador2(NULL) {  
     Entidades::Ente::setGG(&GG);
-    executar();
+    
+    // if(DOIS_JOGADORES) {
+    //     Movimento::Controles c2 = {Movimento::Seta_cima, Movimento::Seta_baixo, Movimento::Seta_esquerda, Movimento::Seta_direita};
+    //     pJogador2 = new Entidades::Jogador(0.0f, 1.0f, c2, 1);
+    
+    // } else {
+    //     Movimento::Controles c1 = {Movimento::Tecla_W, Movimento::Tecla_S, Movimento::Tecla_A, Movimento::Tecla_D};
+    //     pJogador1 = new Entidades::Jogador(0.0f, 1.0f, c1, 0);
+    //     pJogador2 = NULL;
+    // }
+    
+    // executar(); 
+    // pJogador1 = new Entidades::Jogador(0.0f, 1.0f, c1, 0);
+}
+
+Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL) 
+
+{
+    Entidades::Ente::setGG(&GG);
+    
+    Movimento::Controles controles_WASD = {Movimento::Tecla_W, Movimento::Tecla_S, Movimento::Tecla_A, Movimento::Tecla_D};
+    pJogador1 = new Entidades::Jogador(100.0f, 100.0f, controles_WASD, Estilos::VERMELHO);
+    
+    if(numJogadores == 2)
+    {
+        Movimento::Controles controles_setas = {Movimento::Seta_cima, Movimento::Seta_baixo, Movimento::Seta_esquerda, Movimento::Seta_direita};
+        pJogador2 = new Entidades::Jogador(100.0f, 100.0f, controles_setas, Estilos::PRETO);
+    }
+
 }
 
 Jogo::~Jogo(){
-
+    if(pJogador1){
+        delete pJogador1;
+        pJogador1 = NULL;
+    }
+    if(pJogador2){
+        delete pJogador2;
+        pJogador2 = NULL;
+    }
 }
 
 void Jogo::executar(){
-    Entidades::Jogador teste(100.0f, 1.0f);
-    teste.setPosicaoX(100.0f);
-    teste.setPosicaoY(200.0f);
+
     while(GG.JanelaAberta())
     {
         GG.trataEventos();
-        
-        teste.mover();
+
+        if(pJogador1){
+            pJogador1->executar();
+        }
+        if(pJogador2){
+            pJogador2->executar();
+        }
         GG.limparJanela();
-        teste.desenhar();
+        if(pJogador1){
+            pJogador1->desenhar();
+        }
+        if(pJogador2){
+            pJogador2->desenhar();
+        }
         GG.mostrarConteudoJanela();
     }
-    std::cout << teste.getPosicaoX() << " | " << teste.getFigura()->getPosition().x << std::endl;
+    // std::cout << pJogador1->getPosicaoX() << " | " << pJogador1->getFigura()->getPosition().x << std::endl;
     
 }
 

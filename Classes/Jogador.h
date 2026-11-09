@@ -1,15 +1,20 @@
 #pragma once 
 #include "Personagem.h"
+#include "enum.h"
 
 namespace Entidades {
-
     class Inimigo;
     
     class Jogador : public Personagem {
 
-        protected:
+        private: 
+            void criarFigura(Estilos::Cores cor);
+            
+        protected:  
             int pontos;
             float velocidade;
+            Movimento::Controles controles;
+            Estilos::Cores corJogador;
 
         public:
             void colidir(Inimigo*    pInimigo);
@@ -19,7 +24,7 @@ namespace Entidades {
         
         public: 
             Jogador();
-            Jogador(float x_, float y_);
+            Jogador(float x_, float y_, Movimento::Controles control, Estilos::Cores corJog);   
             ~Jogador();
     };
 }

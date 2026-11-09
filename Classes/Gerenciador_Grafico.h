@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "enum.h"
 
 namespace Entidades {
     class Ente;
@@ -22,5 +23,6 @@ class Gerenciador_Grafico{
         void trataEventos();
         void limparJanela();
         void mostrarConteudoJanela();
+        bool teclaPressionada(Movimento::Teclas t);
 };  
 }

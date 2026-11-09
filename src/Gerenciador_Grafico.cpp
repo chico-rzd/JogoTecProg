@@ -22,7 +22,7 @@ void Gerenciador_Grafico::desenharEnte(Entidades::Ente* pE)
 }
 
 
-/*funções para a janela*/
+/*funções para o tratamento da janela*/
 bool Gerenciador_Grafico::JanelaAberta(){
     return Window.isOpen();
 }
@@ -48,6 +48,35 @@ void Gerenciador_Grafico::limparJanela(){
 
 void Gerenciador_Grafico::mostrarConteudoJanela(){
      Window.display();
+}
+
+bool Gerenciador_Grafico::teclaPressionada(Movimento::Teclas t){
+
+    switch (t)
+    {
+        
+    case Movimento::Seta_cima:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::Up);
+    case Movimento::Seta_baixo:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::Down);
+    case Movimento::Seta_esquerda:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::Left);
+    case Movimento::Seta_direita:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::Right);
+
+    case Movimento::Tecla_W:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::W);
+    case Movimento::Tecla_S:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::S);
+    case Movimento::Tecla_A:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::A);
+    case Movimento::Tecla_D:
+        return sf::Keyboard::isKeyPressed(sf::Keyboard::D);
+    
+    default:
+        return false;
+    }
+    return false;
 }
 // sf::RenderWindow Gerenciador_Grafico::getWindow(){
 //     return *Window;

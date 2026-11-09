@@ -10,7 +10,7 @@ Ente::Ente() : id(0), pFigura(NULL) {}
 
 Ente::~Ente(){
     id = -1;
-    if(pFigura != NULL){
+    if(pFigura){
         delete pFigura;
         pFigura = NULL;
     }
@@ -27,9 +27,6 @@ void Ente::setGG(Gerenciadores::Gerenciador_Grafico* pG){
 void Ente::desenhar(){
     if(pGG){
         pGG->desenharEnte(this);
-    }
-    else {
-        printf("ERRO");
     }
 }
 
