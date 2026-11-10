@@ -76,7 +76,6 @@ bool Gerenciador_Grafico::teclaPressionada(Movimento::Teclas t){
     default:
         return false;
     }
-    return false;
 }
 // sf::RenderWindow Gerenciador_Grafico::getWindow(){
 //     return *Window;

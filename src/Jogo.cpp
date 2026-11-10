@@ -1,27 +1,7 @@
 #include "Jogo.h"
 #include "Jogador.h"
-#define UM_JOGADOR 0
-#define DOIS_JOGADORES 1
-
-Jogo::Jogo() : pJogador1(NULL), pJogador2(NULL) {  
-    Entidades::Ente::setGG(&GG);
-    
-    // if(DOIS_JOGADORES) {
-    //     Movimento::Controles c2 = {Movimento::Seta_cima, Movimento::Seta_baixo, Movimento::Seta_esquerda, Movimento::Seta_direita};
-    //     pJogador2 = new Entidades::Jogador(0.0f, 1.0f, c2, 1);
-    
-    // } else {
-    //     Movimento::Controles c1 = {Movimento::Tecla_W, Movimento::Tecla_S, Movimento::Tecla_A, Movimento::Tecla_D};
-    //     pJogador1 = new Entidades::Jogador(0.0f, 1.0f, c1, 0);
-    //     pJogador2 = NULL;
-    // }
-    
-    // executar(); 
-    // pJogador1 = new Entidades::Jogador(0.0f, 1.0f, c1, 0);
-}
 
 Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL) 
-
 {
     Entidades::Ente::setGG(&GG);
     
@@ -31,7 +11,7 @@ Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL)
     if(numJogadores == 2)
     {
         Movimento::Controles controles_setas = {Movimento::Seta_cima, Movimento::Seta_baixo, Movimento::Seta_esquerda, Movimento::Seta_direita};
-        pJogador2 = new Entidades::Jogador(100.0f, 100.0f, controles_setas, Estilos::PRETO);
+        pJogador2 = new Entidades::Jogador(400.0f, 400.0f, controles_setas, Estilos::PRETO);
     }
 
 }
@@ -67,8 +47,6 @@ void Jogo::executar(){
             pJogador2->desenhar();
         }
         GG.mostrarConteudoJanela();
-    }
-    // std::cout << pJogador1->getPosicaoX() << " | " << pJogador1->getFigura()->getPosition().x << std::endl;
-    
+    }    
 }
 

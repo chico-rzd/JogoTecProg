@@ -12,7 +12,6 @@ class Jogo {
         Entidades::Jogador* pJogador2;
         
     public:
-        Jogo();
         Jogo(int numJogadores = 1);
         ~Jogo();    
         void executar();

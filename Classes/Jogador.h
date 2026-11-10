@@ -21,6 +21,7 @@ namespace Entidades {
             void executar();
             void salvar();
             void mover();
+            int retornaIdJog();
         
         public: 
             Jogador();

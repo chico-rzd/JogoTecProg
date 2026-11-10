@@ -4,6 +4,7 @@
 
 Gerenciadores::Gerenciador_Grafico* Entidades::Ente::pGG = NULL;
 
+//incluir o contador estatico
 namespace Entidades {
 
 Ente::Ente() : id(0), pFigura(NULL) {}
