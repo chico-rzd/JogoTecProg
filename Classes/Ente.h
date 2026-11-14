@@ -15,6 +15,7 @@ class Ente {
         int id;
         static Gerenciadores::Gerenciador_Grafico* pGG;
         sf::RectangleShape *pFigura;
+        static int contador;
 
     public:
         Ente();         

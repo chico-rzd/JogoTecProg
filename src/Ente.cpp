@@ -6,29 +6,31 @@ Gerenciadores::Gerenciador_Grafico* Entidades::Ente::pGG = NULL;
 
 //incluir o contador estatico
 namespace Entidades {
+    
+    int Ente::contador = 0;
+    
+    Ente::Ente() : id(contador++), pFigura(NULL) {}
 
-Ente::Ente() : id(0), pFigura(NULL) {}
-
-Ente::~Ente(){
-    id = -1;
-    if(pFigura){
-        delete pFigura;
-        pFigura = NULL;
+    Ente::~Ente(){
+        id = -1;
+        if(pFigura){
+            delete pFigura;
+            pFigura = NULL;
+        }
     }
-}
 
-sf::RectangleShape* Ente::getFigura() const{
-    return pFigura;
-}
-
-void Ente::setGG(Gerenciadores::Gerenciador_Grafico* pG){
-    pGG = pG;
-}
-
-void Ente::desenhar(){
-    if(pGG){
-        pGG->desenharEnte(this);
+    sf::RectangleShape* Ente::getFigura() const{
+        return pFigura;
     }
-}
+
+    void Ente::setGG(Gerenciadores::Gerenciador_Grafico* pG){
+        pGG = pG;
+    }
+
+    void Ente::desenhar(){
+        if(pGG){
+            pGG->desenharEnte(this);
+        }
+    }
 
 }
