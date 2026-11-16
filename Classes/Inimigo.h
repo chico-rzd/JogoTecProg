@@ -1,26 +1,34 @@
 #pragma once
 #include "Personagem.h"
+#include "Entidade.h"
 
-namespace Entidades {
-    class Jogador;
-} 
+namespace Entidades 
+{
+   
+        namespace Personagens
+        {
+            class Jogador;
 
-
-namespace Inimigos {
-
-    class Inimigo : public Entidades::Personagem {
+                class Inimigo : public Entidades::Personagem 
+                {
         
-        protected: 
-            int nivel_maldade;
+                    protected: 
+                        int nivel_maldade;
+                        int direcao;
+                        float lim_esquerda;
+                        float lim_direita;
+                        float velocidade;
 
-        public: 
-            Inimigo();
-            ~Inimigo();
+                    public: 
+                        Inimigo(float posX, float posY, float esq, float dir, float vel, int dirc, int nl_mal);
+                        ~Inimigo();
 
-        public:     
-            void salvarDataBuffer();
-            virtual void executar() = 0;
-            virtual void danificar(Entidades::Jogador* p) = 0;
-            virtual void salvar() = 0;
-    };
- }
+                    public:     
+                        void salvarDataBuffer();
+                        virtual void mover(float dt) = 0;
+                        virtual void executar(float dt) = 0;
+                        virtual void danificar(Entidades::Personagens::Jogador* p) = 0;
+                        virtual void salvar() = 0;
+                };
+        }
+}

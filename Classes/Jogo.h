@@ -8,8 +8,8 @@ namespace Entidades {
 class Jogo {
     private:
         Gerenciadores::Gerenciador_Grafico GG;
-        Entidades::Jogador* pJogador1;
-        Entidades::Jogador* pJogador2;
+        Entidades::Personagens::Jogador* pJogador1;
+        Entidades::Personagens::Jogador* pJogador2;
         
     public:
         Jogo(int numJogadores = 1);

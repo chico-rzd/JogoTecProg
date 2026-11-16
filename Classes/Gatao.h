@@ -1,29 +1,33 @@
 #pragma once
 #include "Inimigo.h"
+#include "Jogador.h"
 #include <SFML/Graphics.hpp>
+#include <cmath>
 
-namespace Entidades {
-    class Jogador;
-}
+constexpr float RAIO_PERSEGUIR_X = 200.0f;
+constexpr float RAIO_PERSEGUIR_Y = 200.0f;
 
-namespace Personagens
+
+namespace Entidades
 {
-    class Gatao: public Inimigos::Inimigo
+    namespace Personagens
     {
-        private:
-            short int forca;
-            float limt_esq;
-            float limt_dir;
-            float vel;
+        class Gatao: public Inimigo
+        {
+            private:
+                Jogador* pJogador;
         
-        public:
+            public:
 
-            Gatao(float posX, float posY, float limE, float limD, sf::Color cor);
-            ~Gatao();
+                Gatao(float posX, float posY, float limE, float limD, float vel, int dirc, int n_mal);
+                ~Gatao();
 
-            void danificar(Entidades::Jogador* p);
-            void mover();
-            void executar();
-            void salvar();
-    };
+                void danificar(Entidades::Personagens::Jogador* p);
+                void mover(float dt) override;
+                void executar( float dt) override;
+                void salvar();
+
+                void setJogador(Jogador* j) { pJogador = j; }
+        };
+    }
 }
