@@ -78,9 +78,5 @@ namespace Gerenciadores
 
     }
 
-    void Gerenciador_Colisoes::salvar()
-    {
-
-    }
 
 }

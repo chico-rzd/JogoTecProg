@@ -20,6 +20,7 @@ namespace Entidades
                         float velocidade;
 
                     public: 
+                        Inimigo();
                         Inimigo(float posX, float posY, float esq, float dir, float vel, int dirc, int nl_mal);
                         ~Inimigo();
 

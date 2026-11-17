@@ -43,10 +43,7 @@ namespace Gerenciadores
         void incluirObstaculo(Entidades::Obstaculos* po);
         void incluirProjeteil(Entidades::Projetil* pj);
 
-        void executar();
-        void salvar();
-
-
+        void executar():
 
     };
 }
