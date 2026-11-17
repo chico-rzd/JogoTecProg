@@ -4,18 +4,13 @@
 
 namespace Obstaculos {
 
-    Rua::Rua() : chao(NULL){
-        criaRua();
+    Rua::Rua() : Obstaculo() {
+        criaElementos(100.0f, 100.0f, sf::Color::Blue);
     }
-    Rua::Rua(float x_, float y_) : Obstaculo(x_, y_), chao(NULL){
-        criaRua();
+    Rua::Rua(float x_, float y_) : Obstaculo(x_, y_) {
+        criaElementos(100.0f, 100.0f, sf::Color::Blue);
     }
     
-    void Rua::criaRua(){
-        pFigura = new sf::RectangleShape(sf::Vector2f(400.0f, 100.0f));
-        pFigura->setFillColor(sf::Color::Red);
-        atualizarFigura();
-    }
     Rua::~Rua(){}
 
     void Rua::obstaculizar(Entidades::Jogador* pJogador) 

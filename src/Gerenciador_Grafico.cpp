@@ -14,13 +14,12 @@ Gerenciador_Grafico::~Gerenciador_Grafico()
 
 void Gerenciador_Grafico::desenharEnte(Entidades::Ente* pE)
 { 
-    if(pE){
+    if(pE){ 
         sf::RectangleShape* pF =  pE->getFigura();
         if(pF)
             Window.draw(*pF);
     }
 }
-
 
 /*funções para o tratamento da janela*/
 bool Gerenciador_Grafico::JanelaAberta(){
