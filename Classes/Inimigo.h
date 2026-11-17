@@ -11,7 +11,7 @@ namespace Entidades
 
                 class Inimigo : public Entidades::Personagens::Personagem 
                 {
-        
+
                     protected: 
                         int nivel_maldade;
                         int direcao;
