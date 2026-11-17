@@ -9,15 +9,15 @@ Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL), pChao(NULL), pT
     Entidades::Ente::setGG(&GG);
     
     Movimento::Controles controles_WASD = {Movimento::Tecla_W, Movimento::Tecla_S, Movimento::Tecla_A, Movimento::Tecla_D};
-    pJogador1 = new Entidades::Jogador(350.0f, 150.0f, controles_WASD, Estilos::VERMELHO);
+    pJogador1 = new Entidades::Personagens::Jogador(100.0f, 100.0f, controles_WASD, Estilos::VERMELHO);
     
     if(numJogadores == 2)
     {
         Movimento::Controles controles_setas = {Movimento::Seta_cima, Movimento::Seta_baixo, Movimento::Seta_esquerda, Movimento::Seta_direita};
-        pJogador2 = new Entidades::Jogador(650.0f, 180.0f, controles_setas, Estilos::PRETO);
+        pJogador2 = new Entidades::Personagens::Jogador(400.0f, 400.0f, controles_setas, Estilos::PRETO);
     }
     pChao = new Obstaculos::Rua(100.0f, 190.0f);
-    pTel = new Obstaculos::Telhado(50.0f, 500.0f);
+    pTel =  new Obstaculos::Telhado(50.0f, 500.0f);
     pPoca = new Obstaculos::Poça(100.0f, 50.0f);
 }
 
@@ -46,8 +46,12 @@ Jogo::~Jogo(){
 
 void Jogo::executar(){
 
+    sf::Clock relogio;
+
     while(GG.JanelaAberta())
     {
+        float dt = relogio.restart().asSeconds();
+
         GG.trataEventos();
 
         if(pJogador1){

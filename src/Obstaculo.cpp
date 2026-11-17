@@ -13,7 +13,7 @@ namespace Obstaculos {
     void Obstaculo::executar() {}
     void Obstaculo::salvar() {}
     
-    void Obstaculo::obstaculizar(Entidades::Jogador* pJogador) {}
+    void Obstaculo::obstaculizar(Entidades::Personagens::Jogador* pJogador) {}
     void Obstaculo::salvarDataBuffer() {}
 
     void Obstaculo::criaElementos(float largura_, float altura_, sf::Color cor){

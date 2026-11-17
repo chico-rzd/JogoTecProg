@@ -13,7 +13,7 @@ namespace Obstaculos {
     
     Rua::~Rua(){}
 
-    void Rua::obstaculizar(Entidades::Jogador* pJogador) 
+    void Rua::obstaculizar(Entidades::Personagens::Jogador* pJogador) 
     {
         if(pJogador == NULL)
             return;

@@ -1,16 +1,12 @@
 #include <SFML\Graphics.hpp>
 #include "Rato.h"
 
-namespace Personagens {
+namespace Entidades {
 
-Personagens::Rato::Rato(float posX, float posY, int limE, int limD, sf::Color cor)
- : raio(0), limt_esq(limE), limt_dir(limD), vel(100.0f)
+Personagens::Rato::Rato(float posX, float posY, float limE, float limD, float vel, int dirc, int n_mal)
+ : Inimigo(posX, posY, limE, limD, vel, dirc, n_mal), pJogador (NULL)
 {
-    pFigura = new sf::RectangleShape(sf::Vector2f(20.f,20.f));
-    pFigura->setFillColor(cor);
-    x = posX;
-    y - posY;
-    atualizarFigura();
+   
 
 }
 
@@ -19,29 +15,38 @@ Personagens::Rato::~Rato()
 
 }
 
-void Personagens::Rato::danificar(Entidades::Jogador* p) //Objetivo: tirar 1/2 ponto do jogador
+void Personagens::Rato::danificar(Personagens::Jogador* p) //Objetivo: tirar 1 ponto do jogador
 {
+    if(p == NULL){
+        return;
+    }
+    
+    p->setVidas(p->getVidas() - 1);
 
 }
 
-void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma telhado
+void Personagens::Rato::mover(float dt) // Objetivo: ficar em cima da plataforma telhado
 {
+    x += velocidade * direcao * dt;
 
-    if(x <= limt_esq){
-        x -= vel;
-    }
-    if(x >= limt_dir)
+    if( x >= lim_direita)
     {
-        x+= vel;
+        x = lim_direita;
+        direcao = -1;
+    }
+    else if ( x <= lim_esquerda)
+    {
+        x = lim_esquerda;
+        direcao = 1;
     }
 
     atualizarFigura();
 
 }
 
-void Personagens::Rato::executar()
+void Personagens::Rato::executar(float dt)
 {
-    mover();
+    mover(dt);
 }
 
 void Personagens::Rato::salvar()

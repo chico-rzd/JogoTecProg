@@ -3,23 +3,30 @@
 
 namespace Entidades {
 
-    class Personagem : public Entidade {
+    namespace Personagens {
 
-        protected:
-            int num_vidas;
+        class Personagem : public Entidade {
+
+            protected:
+                int num_vidas;
         
-        protected:
-            void salvarDataBuffer();
+            protected:
+                void salvarDataBuffer();
 
-        public:
-            Personagem();
-            Personagem(float x_, float y_, int vidas = 3, std::ostream* buff = NULL);
+            public:
+                Personagem();
+                Personagem(float x_, float y_, int vidas = 3, std::ostream* buff = NULL);
             
-            ~Personagem();
+                ~Personagem();
 
-            virtual void executar() = 0;
-            virtual void salvar()   = 0;
-            virtual void mover()    = 0;
+                virtual void executar() = 0;
+                virtual void salvar()   = 0;
+                virtual void mover()    = 0;
 
-    };
+                void setVidas(int n_v) { num_vidas = n_v;};
+                int getVidas() { return num_vidas;}
+ 
+        };
+
+    }
 }

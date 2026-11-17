@@ -2,7 +2,9 @@
 #include "Gerenciador_Grafico.h"
 
 namespace Entidades {
-    class Jogador;
+    namespace Personagens {
+        class Jogador;
+    }
 }
 namespace Obstaculos {
     class Rua;
@@ -13,12 +15,11 @@ namespace Obstaculos {
 class Jogo {
     private:
         Gerenciadores::Gerenciador_Grafico GG;
-        Entidades::Jogador* pJogador1;
-        Entidades::Jogador* pJogador2;
+        Entidades::Personagens::Jogador* pJogador1;
+        Entidades::Personagens::Jogador* pJogador2;
         Obstaculos::Rua*    pChao;
         Obstaculos::Telhado*    pTel;
         Obstaculos::Poça*    pPoca;
-        
     public:
         Jogo(int numJogadores = 1);
         ~Jogo();    

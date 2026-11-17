@@ -18,6 +18,6 @@ namespace Obstaculos {
     }
 
     void Telhado::executar(){}
-    void Telhado::obstaculizar(Entidades::Jogador* pJogador) {}
+    void Telhado::obstaculizar(Entidades::Personagens::Jogador* pJogador) {}
     void Telhado::salvar() {}
 }

@@ -16,7 +16,7 @@ namespace Obstaculos {
             float getElasticidade() const;
             void setElasticidade(float elastico);
             void executar();
-            void obstaculizar(Entidades::Jogador* pJogador);
+            void obstaculizar(Entidades::Personagens::Jogador* pJogador);
             void salvar();
     };
 }

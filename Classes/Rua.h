@@ -13,7 +13,7 @@ namespace Obstaculos {
         public:
             void executar();
             void salvar();
-            void obstaculizar(Entidades::Jogador* pJogador);
+            void obstaculizar(Entidades::Personagens::Jogador* pJogador);
             
     };
 }

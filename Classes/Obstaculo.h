@@ -3,7 +3,9 @@
 #include <SFML/Graphics.hpp>
 
 namespace Entidades {
-    class Jogador;
+    namespace Personagens {
+        class Jogador;
+    }
 }
 
 namespace Obstaculos {
@@ -24,7 +26,7 @@ namespace Obstaculos {
             public:
             void salvarDataBuffer();
             virtual void executar() = 0;
-            virtual void obstaculizar(Entidades::Jogador* pJogador) = 0;
+            virtual void obstaculizar(Entidades::Personagens::Jogador* pJogador) = 0;
             virtual void salvar() = 0;
     };
 }

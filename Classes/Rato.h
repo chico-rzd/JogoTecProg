@@ -1,28 +1,34 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "Inimigo.h"
+#include "Jogador.h"
+#include "Personagem.h"
+#include "Entidade.h"
 
-namespace Personagens
+
+
+namespace Entidades
 {
-    class Rato: public Inimigos::Inimigo
+    namespace Personagens
     {
-        private:
+        class Rato: public Inimigo
+        {
+            private:
+                Jogador* pJogador;
 
-            float raio;
-            float limt_esq;
-            float limt_dir;
-            float vel;
-        
-        public:
+            public:
 
-            Rato(float posX, float posY, int limE, int limD, sf::Color cor);
-            ~Rato();
+                Rato(float posX, float posY, float limE, float limD, float vel,int dirc, int n_mal);
+                ~Rato();
 
-            void danificar(Entidades::Jogador* p);
-            void executar();
-            void mover();
-            void salvar();
+                void danificar(Entidades::Personagens::Jogador* p);
+                void executar(float dt) ;
+                void mover( float dt) ;
+                void salvar();
+
+                void setJogador(Jogador* j) { pJogador = j; }
 
 
-    };
-} 
+        };
+    } 
+}

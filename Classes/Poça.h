@@ -18,7 +18,7 @@ namespace Obstaculos {
             void salvarDataBuffer();
             void executar();
             void salvar();
-            void obstaculizar(Entidades::Jogador* pJogador);
+            void obstaculizar(Entidades::Personagens::Jogador* pJogador);
     };
 }
 
