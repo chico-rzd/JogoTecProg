@@ -20,7 +20,9 @@ FetchContent_Declare(SFML
 FetchContent_MakeAvailable(SFML)
 
 file(GLOB_RECURSE FONTES CONFIGURE_DEPENDS src/*.cpp)
-add_executable(jogo src/main.cpp ${FONTES})
+add_executable(jogo src/main.cpp ${FONTES}
+    Classes/ListaEntidades.h
+    Classes/Lista.h)
 
 target_include_directories(jogo PRIVATE Classes)
 

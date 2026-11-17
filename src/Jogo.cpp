@@ -9,7 +9,7 @@ Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL), pChao(NULL), pT
     Entidades::Ente::setGG(&GG);
     
     Movimento::Controles controles_WASD = {Movimento::Tecla_W, Movimento::Tecla_S, Movimento::Tecla_A, Movimento::Tecla_D};
-    pJogador1 = new Entidades::Personagens::Jogador(100.0f, 100.0f, controles_WASD, Estilos::VERMELHO);
+    pJogador1 = new Entidades::Personagens::Jogador(550.0f, 550.0f, controles_WASD, Estilos::VERMELHO);
     
     if(numJogadores == 2)
     {
