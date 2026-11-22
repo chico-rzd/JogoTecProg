@@ -30,7 +30,7 @@ namespace Entidades
 
     void Personagens::Gatao::mover(float dt) // Objetivo: Perseguir o jogador quando entra na area de alcance
     {
-        if( pJogador == NULL)
+       /* if( pJogador == NULL)
             return;
 
         float dirfX = pJogador->getPosicaoX() - x;
@@ -66,7 +66,7 @@ namespace Entidades
         if( x > lim_direita) x = lim_direita;
 
         atualizarFigura();
-
+        */
     }
 
     void Personagens::Gatao::executar( float dt)

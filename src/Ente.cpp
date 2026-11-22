@@ -1,6 +1,6 @@
+#include "stdafx.h"
 #include "Ente.h"
 #include "Gerenciador_Grafico.h"
-#include "stdafx.h"
 
 Gerenciadores::Gerenciador_Grafico* Entidades::Ente::pGG = NULL;
 
@@ -17,6 +17,22 @@ namespace Entidades {
             delete pFigura;
             pFigura = NULL;
         }
+    }
+
+    void Ente::carregaImagem(const char* imagem)
+    {
+        if(!pGG)
+            return;
+
+        sf::Texture& tex = pGG->carregarTextura(imagem);
+
+        if(!pFigura){
+            pFigura = new sf::RectangleShape();
+        }
+
+       pFigura->setSize(sf::Vector2f((float)tex.getSize().x, (float)tex.getSize().y));
+       pFigura->setTexture(&tex, true);
+
     }
 
     sf::RectangleShape* Ente::getFigura() const{

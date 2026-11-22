@@ -4,9 +4,11 @@
 namespace Entidades {
 
 Personagens::Rato::Rato(float posX, float posY, float limE, float limD, float vel, int dirc, int n_mal)
- : Inimigo(posX, posY, limE, limD, vel, dirc, n_mal), pJogador (NULL)
+ : Inimigo(posX, posY, limE, limD, vel, dirc, n_mal), 
+   pJogador (NULL)
 {
-   
+
+   carregaImagem("rato.png");
 
 }
 

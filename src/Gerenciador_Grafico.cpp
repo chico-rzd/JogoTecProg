@@ -21,12 +21,28 @@ void Gerenciador_Grafico::desenharEnte(Entidades::Ente* pE)
     }
 }
 
+sf::Texture& Gerenciador_Grafico::carregarTextura(const std::string& caminho)
+{
+    std::map<std::string, sf::Texture>::iterator it = texturas.find(caminho);
+
+    if(it == texturas.end()){
+        sf::Texture& t = texturas[caminho];
+        if(!t.loadFromFile(caminho)){
+            std::cerr <<"Erro ao carregar a textura: " << caminho << std:: endl;
+        }
+
+        return t;
+    }
+    return it->second;
+}
+
 /*funções para o tratamento da janela*/
 bool Gerenciador_Grafico::JanelaAberta(){
     return Window.isOpen();
 }
 
 void Gerenciador_Grafico::trataEventos(){
+
     sf::Event event;
     
     while(Window.pollEvent(event))
@@ -42,9 +58,9 @@ void Gerenciador_Grafico::trataEventos(){
 }
 
 void Gerenciador_Grafico::limparJanela(){
-    Window.clear(sf::Color::White);
+    Window.clear(sf::Color(120, 120, 120));
+    
 }
-
 void Gerenciador_Grafico::mostrarConteudoJanela(){
      Window.display();
 }

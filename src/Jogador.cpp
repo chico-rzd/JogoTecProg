@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Gerenciador_Grafico.h"
 #include "enum.h"
+#include "Ente.h"
 
 namespace Entidades {
 
@@ -56,18 +57,37 @@ namespace Entidades {
     }
 
     void Personagens::Jogador::criarFigura(Estilos::Cores cor){
-        pFigura = new sf::RectangleShape(sf::Vector2f(100.0f, 100.0f));
+
+        const char* arquivo = "assets/jogador2.png";
+
         switch (cor)
         {
         case Estilos::PRETO:
-            pFigura->setFillColor(sf::Color::Black);
+            arquivo = "assets/jogador1.png";
             break;
         case Estilos::VERMELHO:
-            pFigura->setFillColor(sf::Color::Red);
+            arquivo = "assets/jogador2.png";
             break;
+
+        default:
+            break;
+
         }
+
+        carregaImagem(arquivo);
+
+        if(pFigura)
+        pFigura->setSize(sf::Vector2f(200.0f, 200.0f));
+        
         atualizarFigura();
+
+        if(pFigura)
+            std::cout << "figura " << pFigura->getSize().x << "x" << pFigura->getSize().y
+                << " pos " << pFigura->getPosition().x << "," << pFigura->getPosition().y << std::endl;
+        else
+            std::cout << "figura NULL" << std::endl;
     }
+
     int Personagens::Jogador::retornaIdJog(){
         return this->id;
     } //teste do id

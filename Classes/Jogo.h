@@ -8,7 +8,7 @@ namespace Entidades {
 }
 namespace Obstaculos {
     class Rua;
-    class Telhado;
+    class Roseira;
     class Poça;
 }
 
@@ -18,7 +18,7 @@ class Jogo {
         Entidades::Personagens::Jogador* pJogador1;
         Entidades::Personagens::Jogador* pJogador2;
         Obstaculos::Rua*    pChao;
-        Obstaculos::Telhado*    pTel;
+        Obstaculos::Roseira*    pRos;
         Obstaculos::Poça*    pPoca;
     public:
         Jogo(int numJogadores = 1);

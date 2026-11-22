@@ -1,10 +1,10 @@
 #include "Jogo.h"
 #include "Jogador.h"
 #include "Rua.h"
-#include "Telhado.h"
+#include "Roseira.h"
 #include "Poça.h"
 
-Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL), pChao(NULL), pTel(NULL), pPoca(NULL)
+Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL), pChao(NULL), pRos(NULL), pPoca(NULL)
 {
     Entidades::Ente::setGG(&GG);
     
@@ -17,7 +17,7 @@ Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL), pChao(NULL), pT
         pJogador2 = new Entidades::Personagens::Jogador(400.0f, 400.0f, controles_setas, Estilos::PRETO);
     }
     pChao = new Obstaculos::Rua(100.0f, 190.0f);
-    pTel =  new Obstaculos::Telhado(50.0f, 500.0f);
+    pRos =  new Obstaculos::Roseira(50.0f, 500.0f);
     pPoca = new Obstaculos::Poça(100.0f, 50.0f);
 }
 
@@ -38,9 +38,9 @@ Jogo::~Jogo(){
         delete pPoca;
         pPoca = NULL;
     }
-    if(pTel){
-        delete pTel;
-        pTel = NULL;
+    if(pRos){
+        delete pRos;
+        pRos = NULL;
     }
 }
 
@@ -73,8 +73,8 @@ void Jogo::executar(){
         if(pJogador2){
             pJogador2->desenhar();
         }
-        if(pTel){
-            pTel->desenhar();
+        if(pRos){
+            pRos->desenhar();
         }
         if(pPoca){
             pPoca->desenhar();

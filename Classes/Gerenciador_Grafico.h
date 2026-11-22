@@ -11,6 +11,7 @@ namespace Gerenciadores {
 class Gerenciador_Grafico{
     private:
         sf::RenderWindow Window;
+        std::map<std::string, sf::Texture> texturas;
 
     public:
         Gerenciador_Grafico();
@@ -24,5 +25,7 @@ class Gerenciador_Grafico{
         void limparJanela();
         void mostrarConteudoJanela();
         bool teclaPressionada(Movimento::Teclas t);
+
+        sf::Texture& carregarTextura(const std::string& caminho);
 };  
 }

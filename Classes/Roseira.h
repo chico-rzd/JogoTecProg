@@ -2,15 +2,15 @@
 #include "Obstaculo.h"
 
 namespace Obstaculos {
-    class Telhado : public Obstaculo 
+    class Roseira : public Obstaculo 
     {
         private:
             float elasticidade;
             
         public:
-            Telhado(float elast = 50);
-            Telhado(float x_, float y_, float elast = 50);
-            ~Telhado(); 
+            Roseira(float elast = 50);
+            Roseira(float x_, float y_, float elast = 50);
+            ~Roseira(); 
         
         public:
             float getElasticidade() const;

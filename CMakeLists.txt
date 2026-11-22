@@ -31,7 +31,20 @@ target_link_libraries(jogo PRIVATE sfml-graphics sfml-window sfml-system)
 set_target_properties(jogo PROPERTIES
     CXX_STANDARD 98
     CXX_STANDARD_REQUIRED ON
-    CXX_EXTENSIONS OFF)
+    CXX_EXTENSIONS OFF
+    # Visual Studio: executa a partir da pasta do executavel
+    VS_DEBUGGER_WORKING_DIRECTORY "$<TARGET_FILE_DIR:jogo>")
+
+# Copia a pasta assets (imagens) para junto do executavel apos cada build,
+# para que caminhos como "assets/jogador1.png" funcionem.
+if(EXISTS "${CMAKE_SOURCE_DIR}/assets")
+    add_custom_command(TARGET jogo POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+                "${CMAKE_SOURCE_DIR}/assets"
+                "$<TARGET_FILE_DIR:jogo>/assets")
+else()
+    message(WARNING "Pasta assets nao encontrada em ${CMAKE_SOURCE_DIR}/assets")
+endif()
 
 if(MINGW)
     target_link_options(jogo PRIVATE -static)
