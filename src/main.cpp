@@ -13,8 +13,15 @@ int main()
         std::cout << "Entrada invalida, escolha 1 ou 2. " << std::endl;
         std::cin >> escolha;
     }
-    
-    Jogo obj(escolha);
-    obj.executar();   
+    try
+    { 
+        Jogo obj(escolha);
+        obj.executar();   
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
    
 }

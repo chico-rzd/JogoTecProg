@@ -24,15 +24,15 @@ void Gerenciador_Grafico::desenharEnte(Entidades::Ente* pE)
 sf::Texture& Gerenciador_Grafico::carregarTextura(const std::string& caminho)
 {
     std::map<std::string, sf::Texture>::iterator it = texturas.find(caminho);
+    
+    if(it != texturas.end())
+        return it->second;
 
-    if(it == texturas.end()){
-        sf::Texture& t = texturas[caminho];
-        if(!t.loadFromFile(caminho)){
-            std::cerr <<"Erro ao carregar a textura: " << caminho << std:: endl;
-        }
-
-        return t;
-    }
+    sf::Texture texturaNova;
+    if(!texturaNova.loadFromFile(caminho))
+        throw std::runtime_error("Erro ao carregar a textura: " + caminho);
+    
+    it = texturas.insert(std::make_pair(caminho, texturaNova)).first;
     return it->second;
 }
 
