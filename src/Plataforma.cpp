@@ -19,8 +19,8 @@ void Plataforma::obstaculizar(Entidades::Personagens::Jogador* pJogador)
     if(pJogador == NULL)
         return;
 
-    sf::FloatRect bJog  = pJogador->getLimites();
-    sf::FloatRect bPlat = getLimites();
+    sf::FloatRect bJog  = pJogador->getLimitesEntidade();
+    sf::FloatRect bPlat = getLimitesEntidade();
     sf::FloatRect inter;
 
     if(!bJog.intersects(bPlat, inter)) return;

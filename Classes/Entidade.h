@@ -36,6 +36,6 @@ namespace Entidades {
             float getPosicaoX() const;
             float getPosicaoY() const;
             
-            virtual sf::FloatRect getLimites() const;
+            virtual sf::FloatRect getLimitesEntidade() const;
     };
 }

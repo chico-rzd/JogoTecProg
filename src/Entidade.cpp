@@ -45,7 +45,7 @@ void Entidade::aplicarFisica(){ /* equação horária da velocidade v(t) = v0 + 
     vetorVelocidade.y += gravidade * pGG->getDeltaTime();
     naPlataforma = false;
 }
-sf::FloatRect Entidade::getLimites() const {
+sf::FloatRect Entidade::getLimitesEntidade() const {
     if(pFigura)
         return pFigura->getGlobalBounds();
     return sf::FloatRect(x, y, 0.0f, 0.0f);

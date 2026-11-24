@@ -104,7 +104,7 @@ void Personagens::Jogador::tentarPular(){
 }
 void Personagens::Jogador::pousar(float yTopo)
 {
-    sf::FloatRect limites = getLimites();
+    sf::FloatRect limites = getLimitesEntidade();
     y += yTopo - (limites.top + limites.height);
     vetorVelocidade.y = 0.0f;
     naPlataforma = true;
@@ -113,19 +113,19 @@ void Personagens::Jogador::pousar(float yTopo)
 
 void Personagens::Jogador::baterCabeca(float yBase)
 {
-    y += yBase - getLimites().top;
+    y += yBase - getLimitesEntidade().top;
     if(vetorVelocidade.y < 0.0f) vetorVelocidade.y = 0.0f;
     atualizarFigura();
 }
 
-sf::FloatRect Personagens::Jogador::getLimites() const
+sf::FloatRect Personagens::Jogador::getLimitesEntidade() const
 {
     const float margemX = 0.15f;
     const float margemY = 0.20f;
     const float proporcaoLargura = 0.62f;
     const float proporcaoAltura = 0.40f;
 
-    sf::FloatRect figura = Entidade::getLimites();
+    sf::FloatRect figura = Entidade::getLimitesEntidade();
 
     return sf::FloatRect(figura.left + margemX * figura.width,
                          figura.top + margemY * figura.height,

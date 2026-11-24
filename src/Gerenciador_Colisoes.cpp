@@ -62,7 +62,7 @@ namespace Gerenciadores
         if((pe1 == NULL) || (pe2 == NULL) )
             return false;
 
-        return (pe1->getLimites()).intersects(pe2->getLimites());
+        return (pe1->getLimitesEntidade()).intersects(pe2->getLimitesEntidade());
     }
 
     void Gerenciador_Colisoes::tratarColisoesJogObstaculos(Entidades::Personagens::Jogador* pJog) 

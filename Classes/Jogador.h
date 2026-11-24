@@ -31,14 +31,14 @@ namespace Entidades {
                 void executar();
                 void salvar();
                 void mover();
-                int retornaIdJog();
+                int retornaIdJog();//tirar
 
                 void pousar(float yTopo);          
                 void baterCabeca(float yBase);     
                 void setLentidao(float fator);     
                 void sofrerDano(int dano); 
                 
-                sf::FloatRect getLimites() const;
+                sf::FloatRect getLimitesEntidade() const;
         
             public: 
                 Jogador();
