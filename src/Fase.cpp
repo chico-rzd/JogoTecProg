@@ -3,7 +3,7 @@
 namespace Fases
 {
     Fase::Fase()
-        : Ente(), lista_ents(NULL), GC(NULL), pRato(NULL), pRua(NULL)
+        : Ente(), lista_ents(NULL), GC(NULL), pRato(NULL), pPlataforma(NULL)
     {
         lista_ents = new Listas::ListaEntidades();
         GC = new Gerenciadores::Gerenciador_Colisoes();
@@ -49,10 +49,10 @@ namespace Fases
 
     void Fase::criarPlataformas()
     {
-        pRua = new Obstaculos::Rua(200.0f,100.0f);
+        pPlataforma = new Obstaculos::Plataforma(200.0f,100.0f);
 
-        lista_ents->incluir(pRua);
-        GC->incluirObstaculo(pRua);
+        lista_ents->incluir(pPlataforma);
+        GC->incluirObstaculo(pPlataforma);
     }
 
     void Fase::criarCenario()

@@ -1,6 +1,6 @@
 #include "Jogo.h"
 #include "Jogador.h"
-#include "Rua.h"
+#include "Plataforma.h"
 #include "Roseira.h"
 #include "Poça.h"
 #include "Gerenciador_Grafico.h"

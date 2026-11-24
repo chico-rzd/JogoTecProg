@@ -3,12 +3,12 @@
 
 namespace Obstaculos {
 
-    class Rua : public Obstaculos::Obstaculo 
+    class Plataforma : public Obstaculos::Obstaculo 
     {            
         public:
-            Rua();
-            Rua(float x_, float y_);
-            ~Rua();
+            Plataforma();
+            Plataforma(float x_, float y_);
+            ~Plataforma();
 
         public:
             void executar();

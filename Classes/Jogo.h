@@ -9,7 +9,7 @@ namespace Entidades {
     }
 }
 namespace Obstaculos {
-    class Rua;
+    class Plataforma;
     class Roseira;
     class Poça;
 }

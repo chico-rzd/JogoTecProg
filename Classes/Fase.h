@@ -5,7 +5,7 @@
 #include "ListaEntidades.h"
 #include "Ente.h"
 #include "Rato.h"
-#include "Rua.h"
+#include "Plataforma.h"
 
 namespace Fases
 {
@@ -16,7 +16,7 @@ namespace Fases
             Listas::ListaEntidades* lista_ents;
             Gerenciadores::Gerenciador_Colisoes* GC;
             Entidades::Personagens::Rato* pRato;
-            Obstaculos::Rua* pRua;
+            Obstaculos::Plataforma* pPlataforma;
 
         protected:
 

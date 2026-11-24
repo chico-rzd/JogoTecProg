@@ -5299,7 +5299,7 @@
 											"top": 1106,
 											"width": 141,
 											"height": 11,
-											"text": "Rua Dia"
+											"text": "Plataforma Dia"
 										},
 										{
 											"_type": "LabelView",
@@ -5569,7 +5569,7 @@
 											"top": 938,
 											"width": 129,
 											"height": 11,
-											"text": "Rua Noite"
+											"text": "Plataforma Noite"
 										},
 										{
 											"_type": "LabelView",
@@ -6003,7 +6003,7 @@
 											"top": 1470,
 											"width": 223,
 											"height": 11,
-											"text": "-pChao: Rua*",
+											"text": "-pChao: Plataforma*",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7743,7 +7743,7 @@
 											"top": 1066,
 											"width": 217,
 											"height": 11,
-											"text": "Rua"
+											"text": "Plataforma"
 										},
 										{
 											"_type": "LabelView",
@@ -7844,7 +7844,7 @@
 											"top": 1097,
 											"width": 217,
 											"height": 11,
-											"text": "«create»+Rua()",
+											"text": "«create»+Plataforma()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7864,7 +7864,7 @@
 											"top": 1110,
 											"width": 217,
 											"height": 11,
-											"text": "«create»+Rua(x_: float, y_: float)",
+											"text": "«create»+Plataforma(x_: float, y_: float)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -7884,7 +7884,7 @@
 											"top": 1123,
 											"width": 217,
 											"height": 11,
-											"text": "«destroy»+Rua()",
+											"text": "«destroy»+Plataforma()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -20020,7 +20020,7 @@
 							},
 							"name": "pChao",
 							"visibility": "private",
-							"type": "Rua*"
+							"type": "Plataforma*"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -20327,7 +20327,7 @@
 					"_parent": {
 						"$ref": "IoH8RzmxEE6xOc9zvj2jawAA"
 					},
-					"name": "Rua Dia",
+					"name": "Plataforma Dia",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -20398,7 +20398,7 @@
 					"_parent": {
 						"$ref": "IoH8RzmxEE6xOc9zvj2jawAA"
 					},
-					"name": "Rua Noite",
+					"name": "Plataforma Noite",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -21862,7 +21862,7 @@
 					"_parent": {
 						"$ref": "IoH8RzmxEE6xOc9zvj2jawAA"
 					},
-					"name": "Rua",
+					"name": "Plataforma",
 					"stereotype": "Obstaculo Fácil",
 					"operations": [
 						{
@@ -21871,7 +21871,7 @@
 							"_parent": {
 								"$ref": "T9DTyL2ff0aCaORFgFOdKgAA"
 							},
-							"name": "Rua",
+							"name": "Plataforma",
 							"stereotype": "create"
 						},
 						{
@@ -21880,7 +21880,7 @@
 							"_parent": {
 								"$ref": "T9DTyL2ff0aCaORFgFOdKgAA"
 							},
-							"name": "Rua",
+							"name": "Plataforma",
 							"stereotype": "create",
 							"parameters": [
 								{
@@ -21909,7 +21909,7 @@
 							"_parent": {
 								"$ref": "T9DTyL2ff0aCaORFgFOdKgAA"
 							},
-							"name": "Rua",
+							"name": "Plataforma",
 							"stereotype": "destroy"
 						},
 						{
