@@ -3,6 +3,7 @@
 #include "Rua.h"
 #include "Roseira.h"
 #include "Poça.h"
+#include "Gerenciador_Grafico.h"
 
 Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL), /*pChao(NULL)*/ pFase(NULL)
 {
@@ -39,11 +40,9 @@ Jogo::~Jogo(){
 
 void Jogo::executar(){
 
-    //sf::Clock relogio;
-
     while(GG.JanelaAberta())
     {
-        //float dt = relogio.restart().asSeconds();
+        GG.atualizaDeltaTime();
 
         GG.trataEventos();
 

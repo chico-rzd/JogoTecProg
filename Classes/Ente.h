@@ -19,13 +19,13 @@ namespace Entidades {
 
         static Gerenciadores::Gerenciador_Grafico* pGG;
         static int contador;
+        void carregaImagem(const char* imagem);
 
     public:
         Ente();         
         virtual ~Ente();
         virtual void executar() = 0;
         void desenhar();
-        void carregaImagem(const char* imagem);
         sf::RectangleShape* getFigura() const;
         static void setGG(Gerenciadores::Gerenciador_Grafico* pG);
     };

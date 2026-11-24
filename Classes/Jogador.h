@@ -14,10 +14,14 @@ namespace Entidades {
                 void criarFigura(Estilos::Cores cor);
             
             protected:  
+
                 int pontos;
                 float velocidade;
                 Movimento::Controles controles;
                 Estilos::Cores corJogador;
+
+                void lerEntradas();
+                void tentarPular();
 
             public:
                 void colidir(Inimigo*    pInimigo);

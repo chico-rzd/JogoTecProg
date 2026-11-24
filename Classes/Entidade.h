@@ -1,6 +1,7 @@
 #pragma once
 #include "Ente.h"
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 namespace Entidades {
 
@@ -13,6 +14,12 @@ namespace Entidades {
         protected:
             void salvarDataBuffer();
             void atualizarFigura();
+            void integrarPosicao();
+            void aplicarFisica();
+            bool naPlataforma;
+
+            sf::Vector2f vetorVelocidade;
+            static const float gravidade;
 
         public:
             Entidade();

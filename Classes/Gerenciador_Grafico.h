@@ -10,10 +10,15 @@ namespace Gerenciadores {
 
 class Gerenciador_Grafico{
     private:
+
         sf::RenderWindow Window;
         std::map<std::string, sf::Texture> texturas;
+        sf::Clock relogio;
+
+        float deltaTempo;
 
     public:
+
         Gerenciador_Grafico();
         ~Gerenciador_Grafico(); 
 
@@ -27,5 +32,8 @@ class Gerenciador_Grafico{
         bool teclaPressionada(Movimento::Teclas t);
 
         sf::Texture& carregarTextura(const std::string& caminho);
+        
+        void atualizaDeltaTime();
+        float getDeltaTime() const;
 };  
 }

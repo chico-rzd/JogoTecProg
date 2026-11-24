@@ -6,89 +6,104 @@
 
 namespace Entidades {
 
-    Personagens::Jogador::Jogador() : Personagem(), pontos(0), velocidade(2.0f), corJogador(Estilos::VERMELHO)
+Personagens::Jogador::Jogador() : Personagem(), pontos(0), velocidade(250.0f),  corJogador(Estilos::VERMELHO)
+{
+    controles.cima      = Movimento::Tecla_W;
+    controles.baixo     = Movimento::Tecla_S;
+    controles.esquerda  = Movimento::Tecla_A;
+    controles.direita   = Movimento::Tecla_D;
+
+    criarFigura(Estilos::VERMELHO);
+}
+
+Personagens::Jogador::Jogador(float x_, float y_, Movimento::Controles control, Estilos::Cores corJog) : Personagem(x_, y_, 5), pontos(0), velocidade(250.0f), controles(control), corJogador(corJog)
+{
+    criarFigura(corJog);
+}
+
+Personagens::Jogador::~Jogador() {}
+
+
+void Personagens::Jogador::colidir(Inimigo* pInimigo){}
+
+void Personagens::Jogador::executar() 
+{
+    mover();
+}
+
+void Personagens::Jogador::salvar() {}
+
+void Personagens::Jogador::mover() {
+
+    vetorVelocidade.x = 0.0f; //zera a cada quadro para não andar infinitamente
+    
+    lerEntradas();
+    tentarPular();
+    aplicarFisica(); 
+    integrarPosicao();
+    
+    if(y > 450.0f) { // REMOVER DEPOIS DE TER A PLATAFORMA FEITA
+        y = 450.0f;
+        vetorVelocidade.y = 0.0f;
+        naPlataforma = true;
+    }
+    atualizarFigura();
+}
+
+void Personagens::Jogador::criarFigura(Estilos::Cores cor){
+    
+    const char* arquivo = "assets/jogador2.png";
+    
+    switch (cor)
     {
-        controles.cima      = Movimento::Tecla_W;
-        controles.baixo     = Movimento::Tecla_S;
-        controles.esquerda  = Movimento::Tecla_A;
-        controles.direita   = Movimento::Tecla_D;
-
-        criarFigura(Estilos::VERMELHO);
-    }
-    
-    Personagens::Jogador::Jogador(float x_, float y_, Movimento::Controles control, Estilos::Cores corJog) : Personagem(x_, y_, 5), pontos(0), velocidade(2.0f), controles(control), corJogador(corJog)
-    {
-        criarFigura(corJog);
-    }
-    
-    Personagens::Jogador::~Jogador() {}
-    
-
-    void Personagens::Jogador::colidir(Inimigo* pInimigo){}
-
-    void Personagens::Jogador::executar() 
-    {
-        mover();
-    }
-
-    void Personagens::Jogador::salvar() {}
-
-    void Personagens::Jogador::mover() {
-
-        if(pGG->teclaPressionada(controles.cima)) 
-        {
-            y -= velocidade;
-        }
-    
-        if(pGG->teclaPressionada(controles.baixo)) 
-        {
-            y += velocidade;
-        }
-        if(pGG->teclaPressionada(controles.esquerda)) 
-        {
-            x -= velocidade;
-        }
-        if(pGG->teclaPressionada(controles.direita)) 
-        {
-            x += velocidade;
-        }
-    
-        atualizarFigura();
-    }
-
-    void Personagens::Jogador::criarFigura(Estilos::Cores cor){
-
-        const char* arquivo = "assets/jogador2.png";
-
-        switch (cor)
-        {
         case Estilos::PRETO:
-            arquivo = "assets/jogador1.png";
-            break;
+        arquivo = "assets/jogador1.png";
+        break;
         case Estilos::VERMELHO:
-            arquivo = "assets/jogador2.png";
-            break;
-
-        default:
-            break;
-
-        }
-
-        carregaImagem(arquivo);
-
-        if(pFigura)
-        pFigura->setSize(sf::Vector2f(200.0f, 200.0f));
+        arquivo = "assets/jogador2.png";
+        break;
         
-        atualizarFigura();
+        default:
+        break;
 
-        if(pFigura)
-            std::cout << "figura " << pFigura->getSize().x << "x" << pFigura->getSize().y
-                << " pos " << pFigura->getPosition().x << "," << pFigura->getPosition().y << std::endl;
-        else
-            std::cout << "figura NULL" << std::endl;
     }
+    carregaImagem(arquivo);
 
-    int Personagens::Jogador::retornaIdJog(){
-        return this->id;
-    } //teste do id
+    if(pFigura)
+    pFigura->setSize(sf::Vector2f(200.0f, 200.0f));
+    
+    atualizarFigura();
+    
+    if(pFigura)
+    std::cout << "figura " << pFigura->getSize().x << "x" << pFigura->getSize().y
+    << " pos " << pFigura->getPosition().x << "," << pFigura->getPosition().y << std::endl;
+    else
+    std::cout << "figura NULL" << std::endl;
+}
+
+/* função que altera a velocidade do jogador em suas posições x e y */
+void Personagens::Jogador::lerEntradas(){
+
+    if(pGG->teclaPressionada(controles.esquerda)) 
+    {
+        vetorVelocidade.x = -velocidade;        
+    }
+    if(pGG->teclaPressionada(controles.direita)) 
+    {
+        vetorVelocidade.x = velocidade;
+    }
+    
+}
+/* Ação de pulo do jogador separado das demais ações*/
+void Personagens::Jogador::tentarPular(){
+    if(pGG->teclaPressionada(controles.cima) && naPlataforma) 
+    {
+        vetorVelocidade.y = -800.0f;
+        naPlataforma = false;
+    }
+}
+
+int Personagens::Jogador::retornaIdJog(){
+    return this->id;
+} //teste do id
 }
