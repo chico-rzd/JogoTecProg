@@ -17,6 +17,7 @@ namespace Obstaculos {
             float altura;
             float largura;
             void criaElementos(float largura_, float altura_, sf::Color cor);
+            void criaElementos(float largura_, float altura_, const char* img);
         
         public:
             Obstaculo(float x_, float y_, std::ostream* bff = NULL);

@@ -29,6 +29,7 @@ namespace Fases
             void criarInimFaceis();
             void criarPlataformas();
             void criarCenario();
+            void incluirPlataforma(float x, float y, float largura, float altura);
 
             virtual void criarInimigos() = 0;
             virtual void criarObstaculo() = 0;

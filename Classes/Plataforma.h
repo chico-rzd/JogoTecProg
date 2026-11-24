@@ -7,7 +7,7 @@ namespace Obstaculos {
     {            
         public:
             Plataforma();
-            Plataforma(float x_, float y_);
+            Plataforma(float x_, float y_, float largura_ = 100.0f, float altura_ = 100.0f);
             ~Plataforma();
 
         public:

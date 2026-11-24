@@ -1,4 +1,5 @@
 #include "Obstaculo.h"
+#include "Gerenciador_Grafico.h"
 #include <SFML/Graphics.hpp>
 
 namespace Obstaculos {
@@ -22,6 +23,23 @@ namespace Obstaculos {
         }
         pFigura = new sf::RectangleShape(sf::Vector2f(largura_, altura_));
         pFigura->setFillColor(cor);
+        largura = largura_;
+        altura = altura_;
+        atualizarFigura();
+
+    }
+    void Obstaculo::criaElementos(float largura_, float altura_, const char* img)
+    {
+        carregaImagem(img);
+
+        if(pFigura)
+        {
+            sf::Texture& tex = pGG->carregarTextura(img);
+            tex.setRepeated(true);                   
+            pFigura->setSize(sf::Vector2f(largura_, altura_));
+            pFigura->setTextureRect(sf::IntRect(0, 0, (int)largura_, (int)altura_));
+        }
+
         largura = largura_;
         altura = altura_;
         atualizarFigura();

@@ -17,6 +17,9 @@ namespace Entidades {
 
                 int pontos;
                 float velocidade;
+                float fatorVelocidade;
+                float tempoInvulneravel;
+
                 Movimento::Controles controles;
                 Estilos::Cores corJogador;
 
@@ -29,11 +32,19 @@ namespace Entidades {
                 void salvar();
                 void mover();
                 int retornaIdJog();
+
+                void pousar(float yTopo);          
+                void baterCabeca(float yBase);     
+                void setLentidao(float fator);     
+                void sofrerDano(int dano); 
+                
+                sf::FloatRect getLimites() const;
         
             public: 
                 Jogador();
                 Jogador(float x_, float y_, Movimento::Controles control, Estilos::Cores corJog);   
                 ~Jogador();
+                Jogador& operator-=(int dano);
 
         };
 
