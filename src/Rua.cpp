@@ -5,10 +5,10 @@
 namespace Obstaculos {
 
     Rua::Rua() : Obstaculo() {
-        criaElementos(100.0f, 100.0f, sf::Color::Blue);
+        criaElementos(100.0f, 100.0f, sf::Color::Black);
     }
     Rua::Rua(float x_, float y_) : Obstaculo(x_, y_) {
-        criaElementos(100.0f, 100.0f, sf::Color::Blue);
+        criaElementos(100.0f, 100.0f, sf::Color::Black);
     }
     
     Rua::~Rua(){}

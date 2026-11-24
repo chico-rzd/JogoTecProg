@@ -9,7 +9,8 @@ namespace Entidades
     : Inimigo(posX, posY, limE, limD, vel, dirc, n_mal), pJogador(NULL)
 
     {   
-
+        carregaImagem("assets/gatao.png");
+        atualizarFigura();
     }
 
     Personagens::Gatao::~Gatao()

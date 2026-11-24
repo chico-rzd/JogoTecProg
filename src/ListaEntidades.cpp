@@ -28,7 +28,18 @@ Entidades::Entidade* ListaEntidades::operator[](int indice) const { return LEs[i
 
 void ListaEntidades::limpar() { LEs.limpar(); }
 
-void ListaEntidades::percorrer() const { LEs.percorrer(); }
+void ListaEntidades::percorrer() // Otimizacao para chamar na fase
+{
+    for (Elemento<Entidades::Entidade>* p = LEs.getPrimeiro(); p != NULL; p = p->getProx())
+    {
+        Entidades::Entidade* pE = p->getInfo();
+        if (pE != NULL)
+        {
+            pE->executar();
+            pE->desenhar();
+        }
+    }
+}
 
 void ListaEntidades::executar()
 {
@@ -37,5 +48,15 @@ void ListaEntidades::executar()
         Entidades::Entidade* pE = p->getInfo();
         if (pE != NULL)
             pE->executar();
+    }
+}
+
+void ListaEntidades::desenharEntidades()
+{
+    for (Elemento<Entidades::Entidade>* p = LEs.getPrimeiro(); p != NULL; p = p->getProx())
+    {
+        Entidades::Entidade* pE = p->getInfo();
+        if (pE != NULL)
+            pE->desenhar();
     }
 }

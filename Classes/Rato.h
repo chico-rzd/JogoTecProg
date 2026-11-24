@@ -22,8 +22,8 @@ namespace Entidades
                 ~Rato();
 
                 void danificar(Entidades::Personagens::Jogador* p);
-                void executar(float dt) ;
-                void mover( float dt) ;
+                void executar() ;
+                void mover() ;
                 void salvar();
 
                 void setJogador(Jogador* j) { pJogador = j; }

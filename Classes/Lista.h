@@ -132,7 +132,7 @@ namespace Listas {
     {
         int i = 0;
         for (Elemento<TL>* pAux = pPrimeiro; pAux != NULL; pAux = pAux->getProx()) {
-            std::cout << "[" << i << "] " << pAux->getInfo() << std::endl;
+            /*std::cout << "[" << i << "] " << pAux->getInfo() << std::endl;*/
             i++;
         }
     }

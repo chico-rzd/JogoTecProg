@@ -26,8 +26,8 @@ namespace Entidades
 
                     public:     
                         void salvarDataBuffer();
-                        virtual void mover(float dt) = 0;
-                        virtual void executar(float dt) = 0;
+                        virtual void mover() = 0;
+                        virtual void executar() = 0;
                         virtual void danificar(Entidades::Personagens::Jogador* p) = 0;
                         virtual void salvar() = 0;
                 };

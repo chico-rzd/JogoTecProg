@@ -8,7 +8,12 @@ Personagens::Rato::Rato(float posX, float posY, float limE, float limD, float ve
    pJogador (NULL)
 {
 
-   carregaImagem("rato.png");
+    carregaImagem("assets/rato.png");
+
+    if(pFigura)
+        pFigura->setSize(sf::Vector2f(150.0f, 150.0f));
+
+    atualizarFigura();
 
 }
 
@@ -27,9 +32,9 @@ void Personagens::Rato::danificar(Personagens::Jogador* p) //Objetivo: tirar 1 p
 
 }
 
-void Personagens::Rato::mover(float dt) // Objetivo: ficar em cima da plataforma telhado
+void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma telhado
 {
-    x += velocidade * direcao * dt;
+    /*x += velocidade * direcao * dt;
 
     if( x >= lim_direita)
     {
@@ -40,19 +45,20 @@ void Personagens::Rato::mover(float dt) // Objetivo: ficar em cima da plataforma
     {
         x = lim_esquerda;
         direcao = 1;
-    }
+    }*/
 
     atualizarFigura();
 
 }
 
-void Personagens::Rato::executar(float dt)
+void Personagens::Rato::executar()
 {
-    mover(dt);
+    //mover();
 }
 
 void Personagens::Rato::salvar()
 {
 
 }
+
 }

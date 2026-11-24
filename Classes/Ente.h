@@ -10,7 +10,7 @@ namespace Gerenciadores {
 
 namespace Entidades {
 
-class Ente {
+  class Ente {
     
     protected:
 

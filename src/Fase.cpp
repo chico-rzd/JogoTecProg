@@ -33,7 +33,7 @@ namespace Fases
 
     void Fase::executar()
     {
-        desenhar();                        
+        desenhar(); //Desenha cenario                      
         lista_ents->percorrer();               
         //GC->executar();  
     }        

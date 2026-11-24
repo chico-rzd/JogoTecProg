@@ -21,8 +21,9 @@ namespace Listas {
             size_t getTamanho() const;
             Entidades::Entidade* operator[](int indice) const;
 
+            void desenharEntidades();
             void limpar();
-            void percorrer() const;
+            void percorrer();
             void executar();
     };
 
