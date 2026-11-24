@@ -18,8 +18,8 @@ namespace Entidades
                 ~Cachorro();
 
                 void danificar(Entidades::Personagens::Jogador* p);
-                void mover(float dt) ;
-                void executar( float dt) ;
+                void mover();
+                void executar();
                 void salvar();
 
                 void setJogador(Jogador* j) { pJogador = j; }

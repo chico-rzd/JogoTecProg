@@ -5,7 +5,13 @@ namespace Entidades {
 Personagens::Cachorro::Cachorro(float posX, float posY, float limE, float limD, float vel, int dirc,int n_mal)
     : Inimigo(posX, posY, limE, limD, vel, dirc, n_mal), pJogador(NULL)
 {
-   
+    carregaImagem("assets/cachorro.png");
+
+    if(pFigura)
+        pFigura->setSize(sf::Vector2f(150.0f, 150.0f));
+
+    atualizarFigura();
+
 }
 
 Personagens::Cachorro::~Cachorro()
@@ -22,9 +28,9 @@ void Personagens::Cachorro::danificar(Personagens::Jogador* p) // Objetivo: tira
     p->setVidas(p->getVidas() - 2);
 }
 
-void Personagens::Cachorro::mover(float dt) //Objetivo: ficar em cima da plataforma rua
+void Personagens::Cachorro::mover() //Objetivo: ficar em cima da plataforma rua
 {
-    x += velocidade * direcao * dt;
+   /* x += velocidade * direcao * dt;
 
     if( x >= lim_direita)
     {
@@ -37,13 +43,13 @@ void Personagens::Cachorro::mover(float dt) //Objetivo: ficar em cima da platafo
         direcao = 1;
     }
 
-    atualizarFigura();
+    atualizarFigura();*/
 
 }
 
-void Personagens::Cachorro::executar(float dt)
+void Personagens::Cachorro::executar()
 {
-    mover(dt);
+    mover();
 }
 
 void Personagens::Cachorro::salvar()
