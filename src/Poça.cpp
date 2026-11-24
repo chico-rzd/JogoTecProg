@@ -5,10 +5,10 @@ namespace Obstaculos {
     Poça::Poça(float x_, float y_, short int dano) : Obstaculo(x_, y_), danosidade(dano) 
     {
         danoso = true;
-        criaElementos(50.0f, 50.0f, sf::Color::Blue);
+        criaElementos(100.0f, 10.0f, sf::Color::Blue);
     }
     Poça::Poça(short int dano) : Obstaculo(), danosidade(dano){
-        criaElementos(50.0f, 50.0f, sf::Color::Magenta);
+        criaElementos(100.0f, 10.0f, sf::Color::Blue);
 
     }
     Poça::~Poça() {};

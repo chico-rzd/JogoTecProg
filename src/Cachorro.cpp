@@ -30,21 +30,20 @@ void Personagens::Cachorro::danificar(Personagens::Jogador* p) // Objetivo: tira
 
 void Personagens::Cachorro::mover() //Objetivo: ficar em cima da plataforma rua
 {
-   /* x += velocidade * direcao * dt;
+   x += velocidade * direcao;
 
-    if( x >= lim_direita)
+    if (x >= lim_direita)
     {
         x = lim_direita;
         direcao = -1;
     }
-    else if ( x <= lim_esquerda)
+    else if (x <= lim_esquerda)
     {
         x = lim_esquerda;
         direcao = 1;
     }
 
-    atualizarFigura();*/
-
+    atualizarFigura();
 }
 
 void Personagens::Cachorro::executar()
