@@ -6,9 +6,9 @@ namespace Entidades {
 
 const float Entidade::gravidade = 1500.0f;
 
-Entidade::Entidade() : x(0), y(0), buffer(NULL), vetorVelocidade(0.0f, 0.0f), naPlataforma(false) {}
+Entidade::Entidade() : x(0), y(0), naPlataforma(false), buffer(NULL), vetorVelocidade(0.0f, 0.0f) {}
 
-Entidade::Entidade(float x_, float y_, std::ostream* buff) : Ente(), x(x_), y(y_), buffer(buff), vetorVelocidade(0.0f, 0.0f), naPlataforma(false)
+Entidade::Entidade(float x_, float y_, std::ostream* buff) : Ente(), x(x_), y(y_), buffer(buff), naPlataforma(false), vetorVelocidade(0.0f, 0.0f)
 {}
 
 Entidade::~Entidade(){}
@@ -44,5 +44,10 @@ void Entidade::integrarPosicao(){
 void Entidade::aplicarFisica(){ /* equação horária da velocidade v(t) = v0 + a * t */
     vetorVelocidade.y += gravidade * pGG->getDeltaTime();
     naPlataforma = false;
+}
+sf::FloatRect Entidade::getLimites() const {
+    if(pFigura)
+        return pFigura->getGlobalBounds();
+    return sf::FloatRect(x, y, 0.0f, 0.0f);
 }
 }
