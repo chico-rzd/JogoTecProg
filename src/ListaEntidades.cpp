@@ -30,15 +30,8 @@ void ListaEntidades::limpar() { LEs.limpar(); }
 
 void ListaEntidades::percorrer() // Otimizacao para chamar na fase
 {
-    for (Elemento<Entidades::Entidade>* p = LEs.getPrimeiro(); p != NULL; p = p->getProx())
-    {
-        Entidades::Entidade* pE = p->getInfo();
-        if (pE != NULL)
-        {
-            pE->executar();
-            pE->desenhar();
-        }
-    }
+    executar(); 
+    desenharEntidades();
 }
 
 void ListaEntidades::executar()
