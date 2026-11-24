@@ -15,10 +15,10 @@ namespace Entidades {
     protected:
 
         int id;
-        sf::RectangleShape* pFigura;
-
         static Gerenciadores::Gerenciador_Grafico* pGG;
+        sf::RectangleShape* pFigura;
         static int contador;
+
         void carregaImagem(const char* imagem);
 
     public:
