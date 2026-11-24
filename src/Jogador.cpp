@@ -73,12 +73,6 @@ void Personagens::Jogador::criarFigura(Estilos::Cores cor){
     pFigura->setSize(sf::Vector2f(200.0f, 200.0f));
     
     atualizarFigura();
-    
-    if(pFigura)
-    std::cout << "figura " << pFigura->getSize().x << "x" << pFigura->getSize().y
-    << " pos " << pFigura->getPosition().x << "," << pFigura->getPosition().y << std::endl;
-    else
-    std::cout << "figura NULL" << std::endl;
 }
 
 /* função que altera a velocidade do jogador em suas posições x e y */

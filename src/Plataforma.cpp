@@ -17,7 +17,6 @@ namespace Obstaculos {
     {
         if(pJogador == NULL)
             return;
-        
     }
 
     void Plataforma::executar(){}

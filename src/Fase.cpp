@@ -28,14 +28,14 @@ namespace Fases
         criarCenario();
         criarInimFaceis();
         criarPlataformas();
-
     }
 
     void Fase::executar()
     {
+        lista_ents->executar();       
+        GC->executar();        
         desenhar(); //Desenha cenario                      
-        lista_ents->percorrer();               
-        //GC->executar();  
+        lista_ents->desenharEntidades(); 
     }        
 
     void Fase::criarInimFaceis()
@@ -44,25 +44,29 @@ namespace Fases
         
         lista_ents->incluir(pRato);
         GC->incluirInimigo(pRato);
- 
+        
     }
-
+    
     void Fase::criarPlataformas()
     {
-        pPlataforma = new Obstaculos::Plataforma(200.0f,100.0f);
+        pPlataforma = new Obstaculos::Plataforma(500.0f,400.0f);
 
         lista_ents->incluir(pPlataforma);
         GC->incluirObstaculo(pPlataforma);
     }
-
+    
     void Fase::criarCenario()
     {
         
         carregaImagem("assets/cenario.png");
-
+        
         pFigura->setSize(sf::Vector2f(1280.0f,700.0f));
         pFigura->setPosition(0.f, 0.f);
-
+        
+    }
+    void Fase::incluirJogador(Entidades::Personagens::Jogador* pJogador){
+        lista_ents->incluir(pJogador);
+        GC->incluirJogador(pJogador);
     }
     
 } 

@@ -7,6 +7,11 @@
 #include "Rato.h"
 #include "Plataforma.h"
 
+namespace Entidades {
+    namespace Personagens{
+        class Jogador;
+    }
+}
 namespace Fases
 {
     class Fase: public Entidades::Ente
@@ -33,6 +38,8 @@ namespace Fases
             Fase();
             ~Fase();
 
+
+            void incluirJogador(Entidades::Personagens::Jogador* pJogador);
             virtual void executar();   
 
     };
