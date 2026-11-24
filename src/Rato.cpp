@@ -1,5 +1,6 @@
 #include <SFML\Graphics.hpp>
 #include "Rato.h"
+#include "Gerenciador_Grafico.h"
 
 namespace Entidades {
 
@@ -32,20 +33,20 @@ void Personagens::Rato::danificar(Personagens::Jogador* p) //Objetivo: tirar 1 p
 
 }
 
-void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma telhado
+void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma 
 {
-    /*x += velocidade * direcao * dt;
+    x += velocidade * direcao * pGG->getDeltaTime();
 
-    if( x >= lim_direita)
+    if (x >= lim_direita)
     {
         x = lim_direita;
         direcao = -1;
     }
-    else if ( x <= lim_esquerda)
+    else if (x <= lim_esquerda)
     {
         x = lim_esquerda;
         direcao = 1;
-    }*/
+    }
 
     atualizarFigura();
 
@@ -53,7 +54,7 @@ void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma telhado
 
 void Personagens::Rato::executar()
 {
-    //mover();
+    mover();
 }
 
 void Personagens::Rato::salvar()
