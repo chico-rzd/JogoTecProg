@@ -1,15 +1,40 @@
 #pragma once
 
 #include "Gerenciador_Colisoes.h"
-#include"Gerenciador_Grafico.h"
+#include "Gerenciador_Grafico.h"
 #include "ListaEntidades.h"
+#include "Ente.h"
+#include "Rato.h"
+#include "Rua.h"
 
 namespace Fases
 {
-    class Fase
+    class Fase: public Entidades::Ente
     {
         protected:
 
-        ListaEntidade list_ente;
-    }
+            Listas::ListaEntidades* lista_ents;
+            Gerenciadores::Gerenciador_Colisoes* GC;
+            Entidades::Personagens::Rato* pRato;
+            Obstaculos::Rua* pRua;
+
+        protected:
+
+            void inicializar();
+            void criarInimFaceis();
+            void criarPlataformas();
+            void criarCenario();
+
+            virtual void criarInimigos() = 0;
+            virtual void criarObstaculo() = 0;
+
+        public:
+
+            Fase();
+            ~Fase();
+
+            virtual void executar();   
+
+    };
+
 }
