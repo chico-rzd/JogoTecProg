@@ -27,6 +27,5 @@ class Jogo {
         Jogo(int numJogadores = 1);
         ~Jogo();    
         void executar();
-        void escolheQntJogadores(int escolha);
 
 };  

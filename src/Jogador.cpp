@@ -45,7 +45,7 @@ void Personagens::Jogador::salvar() {}
 void Personagens::Jogador::mover() {
 
     vetorVelocidade.x = 0.0f; //zera a cada quadro para não andar infinitamente
-    if(tempoInvulneravel > 0.0f) tempoInvulneravel -= pGG->getDeltaTime();
+    if(tempoInvulneravel > 0.0f) tempoInvulneravel -= pGG->getDeltaTempo();
 
     lerEntradas();
     tentarPular();

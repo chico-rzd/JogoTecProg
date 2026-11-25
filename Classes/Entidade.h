@@ -20,7 +20,7 @@ namespace Entidades {
             void atualizarFigura();
             void integrarPosicao();
             void aplicarFisica();
-
+        
         public:
             Entidade();
             Entidade(float x_, float y_, std::ostream* buff);

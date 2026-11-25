@@ -5,7 +5,7 @@ namespace Obstaculos {
     class Roseira : public Obstaculo 
     {
         private:
-            float elasticidade;
+            float elasticidade; //pensar em outro atributo
             
         public:
             Roseira(float elast = 50);

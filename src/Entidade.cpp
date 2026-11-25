@@ -37,12 +37,12 @@ void Entidade::atualizarFigura() {
     }
 }
 void Entidade::integrarPosicao(){
-    x += vetorVelocidade.x * pGG->getDeltaTime();
-    y += vetorVelocidade.y * pGG->getDeltaTime();
+    x += vetorVelocidade.x * pGG->getDeltaTempo();
+    y += vetorVelocidade.y * pGG->getDeltaTempo();
 }
 
 void Entidade::aplicarFisica(){ /* equação horária da velocidade v(t) = v0 + a * t */
-    vetorVelocidade.y += gravidade * pGG->getDeltaTime();
+    vetorVelocidade.y += gravidade * pGG->getDeltaTempo();
     naPlataforma = false;
 }
 sf::FloatRect Entidade::getLimitesEntidade() const {

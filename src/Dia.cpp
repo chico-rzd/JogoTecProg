@@ -6,7 +6,7 @@ namespace Fases
     {
         inicializar();      
         criarInimigos();
-        criarObstaculo();
+        criarObstaculos();
     }
 
     Dia::~Dia() {}
@@ -16,7 +16,7 @@ namespace Fases
         criarInimMedios();
     }
 
-    void Dia::criarObstaculo()
+    void Dia::criarObstaculos()
     {
         criarObstMedios();
     }

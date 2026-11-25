@@ -32,7 +32,7 @@ namespace Fases
             void incluirPlataforma(float x, float y, float largura, float altura);
 
             virtual void criarInimigos() = 0;
-            virtual void criarObstaculo() = 0;
+            virtual void criarObstaculos() = 0;
 
         public:
 

@@ -44,7 +44,7 @@ void Jogo::executar(){
 
     while(GG.JanelaAberta())
     {
-        GG.atualizaDeltaTime();
+        GG.atualizaDeltaTempo();
 
         GG.trataEventos();
 

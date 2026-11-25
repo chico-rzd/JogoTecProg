@@ -94,12 +94,12 @@ bool Gerenciador_Grafico::teclaPressionada(Movimento::Teclas t){
     }
 
 }
-void Gerenciador_Grafico::atualizaDeltaTime(){
+void Gerenciador_Grafico::atualizaDeltaTempo(){
     deltaTempo = relogio.restart().asSeconds();
     if(deltaTempo > 0.05f) deltaTempo = 0.05f; // evita tunnelling
 }
 
-float Gerenciador_Grafico::getDeltaTime() const {
+float Gerenciador_Grafico::getDeltaTempo() const {
     return deltaTempo;
 }
 // sf::RenderWindow Gerenciador_Grafico::getWindow(){

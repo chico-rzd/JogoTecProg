@@ -23,7 +23,7 @@ class Gerenciador_Grafico{
         ~Gerenciador_Grafico(); 
 
     public:
-        
+
         void desenharEnte(Entidades::Ente* pE);
         bool JanelaAberta();
         void trataEventos();
@@ -33,7 +33,7 @@ class Gerenciador_Grafico{
 
         sf::Texture& carregarTextura(const std::string& caminho);
         
-        void atualizaDeltaTime();
-        float getDeltaTime() const;
+        void atualizaDeltaTempo();
+        float getDeltaTempo() const;
 };  
 }
