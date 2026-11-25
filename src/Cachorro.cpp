@@ -31,7 +31,7 @@ void Personagens::Cachorro::danificar(Personagens::Jogador* p) // Objetivo: tira
 
 void Personagens::Cachorro::mover() //Objetivo: ficar em cima da plataforma rua
 {
-   x += velocidade * direcao * pGG->getDeltaTime();
+   x += velocidade * direcao * pGG->getDeltaTempo();
 
     if (x >= lim_direita)
     {

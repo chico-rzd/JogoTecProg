@@ -35,7 +35,7 @@ void Personagens::Rato::danificar(Personagens::Jogador* p) //Objetivo: tirar 1 p
 
 void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma 
 {
-    x += velocidade * direcao * pGG->getDeltaTime();
+    x += velocidade * direcao * pGG->getDeltaTempo();
 
     if (x >= lim_direita)
     {
