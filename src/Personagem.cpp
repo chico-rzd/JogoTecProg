@@ -3,7 +3,7 @@
 
 namespace Entidades {
     namespace Personagens {
-        Personagem::Personagem() : num_vidas(0) {}
+        Personagem::Personagem() : Entidade(),  num_vidas(0) {}
 
         Personagem::Personagem(float x_, float y_, int vidas, std::ostream* buff) : Entidade(x_, y_, buff), num_vidas(vidas) {}
 

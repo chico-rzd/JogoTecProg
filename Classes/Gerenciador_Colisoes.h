@@ -33,7 +33,8 @@ namespace Gerenciadores
             Entidades::Personagens::Jogador* pJog2;
 
             const bool verificarColisao(Entidades::Entidade* pe1, Entidades::Entidade* pe2);
-            void tratarColisoesJogsObstaculos();
+            void tratarColisoesJogObstaculos();
+            void tratarColisoesJogObstaculos(Entidades::Personagens::Jogador* pJog);
             void tratarColisoesInimigos();
             void tratarColisoesProjeteis();
 
@@ -43,7 +44,8 @@ namespace Gerenciadores
 
             void incluirInimigo(Entidades::Personagens::Inimigo* pi);
             void incluirObstaculo(Obstaculos::Obstaculo* po);
-            void incluirProjeteil(Entidades::Projetil* pj);
+            void incluirProjetil(Entidades::Projetil* pj);
+            void incluirJogador(Entidades::Personagens::Jogador* pJog);
 
             void executar();
     };

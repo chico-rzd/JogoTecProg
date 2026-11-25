@@ -9,7 +9,7 @@ namespace Entidades {
     }
 }
 namespace Obstaculos {
-    class Rua;
+    class Plataforma;
     class Roseira;
     class Poça;
 }
@@ -27,6 +27,5 @@ class Jogo {
         Jogo(int numJogadores = 1);
         ~Jogo();    
         void executar();
-        void escolheQntJogadores(int escolha);
 
 };  

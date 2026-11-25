@@ -1,4 +1,5 @@
 #include "Cachorro.h"
+#include "Gerenciador_Grafico.h"
 
 namespace Entidades {
 
@@ -30,7 +31,7 @@ void Personagens::Cachorro::danificar(Personagens::Jogador* p) // Objetivo: tira
 
 void Personagens::Cachorro::mover() //Objetivo: ficar em cima da plataforma rua
 {
-   x += velocidade * direcao;
+   x += velocidade * direcao * pGG->getDeltaTempo();
 
     if (x >= lim_direita)
     {

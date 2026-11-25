@@ -5,8 +5,13 @@
 #include "ListaEntidades.h"
 #include "Ente.h"
 #include "Rato.h"
-#include "Rua.h"
+#include "Plataforma.h"
 
+namespace Entidades {
+    namespace Personagens{
+        class Jogador;
+    }
+}
 namespace Fases
 {
     class Fase: public Entidades::Ente
@@ -16,7 +21,7 @@ namespace Fases
             Listas::ListaEntidades* lista_ents;
             Gerenciadores::Gerenciador_Colisoes* GC;
             Entidades::Personagens::Rato* pRato;
-            Obstaculos::Rua* pRua;
+            Obstaculos::Plataforma* pPlataforma;
 
         protected:
 
@@ -24,15 +29,18 @@ namespace Fases
             void criarInimFaceis();
             void criarPlataformas();
             void criarCenario();
+            void incluirPlataforma(float x, float y, float largura, float altura);
 
             virtual void criarInimigos() = 0;
-            virtual void criarObstaculo() = 0;
+            virtual void criarObstaculos() = 0;
 
         public:
 
             Fase();
             ~Fase();
 
+
+            void incluirJogador(Entidades::Personagens::Jogador* pJogador);
             virtual void executar();   
 
     };

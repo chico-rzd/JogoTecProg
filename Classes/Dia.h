@@ -16,7 +16,7 @@ namespace Fases
             void criarInimMedios();
             void criarObstMedios();
             void criarInimigos();
-            void criarObstaculo();
+            void criarObstaculos();
 
         public:
             Dia();

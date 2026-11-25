@@ -2,9 +2,11 @@
 #include "Ente.h"
 #include "stdafx.h"
 
+const float DT60FPS = 0.0167f;
+
 namespace Gerenciadores {
 
-Gerenciador_Grafico::Gerenciador_Grafico() : Window(sf::VideoMode(1280, 700), "Cats Run")
+Gerenciador_Grafico::Gerenciador_Grafico() : Window(sf::VideoMode(1280, 700), "Cats Run"), texturas(), deltaTempo(DT60FPS) 
 {
     Window.setFramerateLimit(60);
 }
@@ -66,7 +68,6 @@ void Gerenciador_Grafico::mostrarConteudoJanela(){
 }
 
 bool Gerenciador_Grafico::teclaPressionada(Movimento::Teclas t){
-
     switch (t)
     {
         
@@ -91,6 +92,15 @@ bool Gerenciador_Grafico::teclaPressionada(Movimento::Teclas t){
     default:
         return false;
     }
+
+}
+void Gerenciador_Grafico::atualizaDeltaTempo(){
+    deltaTempo = relogio.restart().asSeconds();
+    if(deltaTempo > 0.05f) deltaTempo = 0.05f; // evita tunnelling
+}
+
+float Gerenciador_Grafico::getDeltaTempo() const {
+    return deltaTempo;
 }
 // sf::RenderWindow Gerenciador_Grafico::getWindow(){
 //     return *Window;
