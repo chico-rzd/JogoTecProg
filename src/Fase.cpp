@@ -39,7 +39,7 @@ namespace Fases
 
     void Fase::criarInimFaceis()
     {
-        pRato = new Entidades::Personagens::Rato(600.0f, 80.0f, 500.0f, 900.0f, 180.0f, 1, 1);
+        pRato = new Entidades::Personagens::Rato(600.0f, 112.0f, 500.0f, 900.0f, 180.0f, 1, 1);
 
         lista_ents->incluir(pRato);
         GC->incluirInimigo(pRato);
@@ -47,9 +47,11 @@ namespace Fases
 
     void Fase::criarPlataformas()
     {
+        incluirPlataforma(0.0f, 180.0f, 1000.0f, 48.0f);
+        incluirPlataforma(200.0f, 360.0f, 1200.0f, 48.0f);
         incluirPlataforma(0.0f, 652.0f, 1288.0f, 48.0f);
-        incluirPlataforma(250.0f, 480.0f, 276.0f, 48.0f);
-        incluirPlataforma(715.0f, 480.0f, 276.0f, 48.0f);
+        //incluirPlataforma(250.0f, 480.0f, 276.0f, 48.0f);
+        //incluirPlataforma(715.0f, 480.0f, 276.0f, 48.0f);
     }
 
     void Fase::incluirPlataforma(float x, float y, float largura, float altura)

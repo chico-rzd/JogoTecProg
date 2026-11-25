@@ -9,7 +9,7 @@ Personagens::Cachorro::Cachorro(float posX, float posY, float limE, float limD, 
     carregaImagem("assets/cachorro.png");
 
     if(pFigura)
-        pFigura->setSize(sf::Vector2f(150.0f, 150.0f));
+        pFigura->setSize(sf::Vector2f(120.0f, 120.0f));
 
     atualizarFigura();
 
@@ -20,7 +20,7 @@ Personagens::Cachorro::~Cachorro()
 
 }
 
-void Personagens::Cachorro::danificar(Personagens::Jogador* p) // Objetivo: tirar um dois pontos do Jogador
+void Personagens::Cachorro::danificar(Personagens::Jogador* p) // Objetivo: tirar dois pontos do Jogador
 {
     if(p == NULL){
         return;
