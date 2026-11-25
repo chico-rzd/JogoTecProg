@@ -1,19 +1,19 @@
 #include "Poça.h"
 
-static const char* const caminhoPoca = "assets/poca.png";
+static const char* const caminhoPoca = "assets/poca_cortada.png";
 
 namespace Obstaculos {
 
     Poça::Poça(float x_, float y_, short int dano) : Obstaculo(x_, y_), danosidade(dano) 
     {
         danoso = true;
-        criaElementos(400.0f, 100.0f, caminhoPoca);
+        criaElementos(89.0f, 16.0f, caminhoPoca);
     }
     Poça::Poça(short int dano) : Obstaculo(), danosidade(dano){
-        criaElementos(400.0f, 100.0f, caminhoPoca);
+        criaElementos(89.0f, 16.0f, caminhoPoca);
 
     }
-    Poça::~Poça() {};
+    Poça::~Poça() {};   
 
     void Poça::salvarDataBuffer() {}
     void Poça::executar() {}    

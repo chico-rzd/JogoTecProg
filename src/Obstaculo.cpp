@@ -28,16 +28,15 @@ namespace Obstaculos {
         atualizarFigura();
 
     }
-    void Obstaculo::criaElementos(float largura_, float altura_, const char* img)
+    void Obstaculo::criaElementos(float largura_, float altura_, const char* img, Texturas::Modo modo)
     {
-        carregaImagem(img);
-
+        carregaImagem(img, modo);
+        
         if(pFigura)
         {
-            sf::Texture& tex = pGG->carregarTextura(img);
-            tex.setRepeated(true);                   
             pFigura->setSize(sf::Vector2f(largura_, altura_));
-            pFigura->setTextureRect(sf::IntRect(0, 0, (int)largura_, (int)altura_));
+            if(modo == Texturas::REPETIR_FIGURA)
+                pFigura->setTextureRect(sf::IntRect(0, 0, (int)largura_, (int)altura_));
         }
 
         largura = largura_;

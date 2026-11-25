@@ -6,10 +6,10 @@ static const char* const caminhoPlataforma = "assets/ground_cortado.png";
 namespace Obstaculos {
 
 Plataforma::Plataforma() : Obstaculo() {
-    criaElementos(100.0f, 100.0f, caminhoPlataforma);
+    criaElementos(100.0f, 100.0f, caminhoPlataforma, Texturas::REPETIR_FIGURA);
 }
 Plataforma::Plataforma(float x_, float y_, float largura_, float altura_) : Obstaculo(x_, y_) {
-    criaElementos(largura_, altura_, caminhoPlataforma);
+    criaElementos(largura_, altura_, caminhoPlataforma, Texturas::REPETIR_FIGURA);
 }
 
 Plataforma::~Plataforma(){}

@@ -19,12 +19,12 @@ namespace Entidades {
         }
     }
 
-    void Ente::carregaImagem(const char* imagem)
+    void Ente::carregaImagem(const char* imagem, Texturas::Modo modo)
     {
         if(!pGG)
             return;
 
-        sf::Texture& tex = pGG->carregarTextura(imagem);
+        sf::Texture& tex = pGG->carregarTextura(imagem, modo);
 
         if(!pFigura){
             pFigura = new sf::RectangleShape();

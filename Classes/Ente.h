@@ -1,4 +1,5 @@
 #pragma once
+#include "enum.h"
 
 namespace sf {
     class RectangleShape;
@@ -19,7 +20,7 @@ namespace Entidades {
         sf::RectangleShape* pFigura;
         static int contador;
 
-        void carregaImagem(const char* imagem);
+        void carregaImagem(const char* imagem, Texturas::Modo modo = Texturas::ESTICAR_FIGURA);
 
     public:
         Ente();         
@@ -29,4 +30,4 @@ namespace Entidades {
         sf::RectangleShape* getFigura() const;
         static void setGG(Gerenciadores::Gerenciador_Grafico* pG);
     };
-};
+}

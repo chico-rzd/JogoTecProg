@@ -30,7 +30,7 @@ namespace Fases
 
     void Dia::criarObstMedios() 
     {
-        pPoca = new Obstaculos::Poça(600.0f, 300.0f, 0);
+        pPoca = new Obstaculos::Poça(600.0f, 344.0f, 0);
         lista_ents->incluir(pPoca);
         GC->incluirObstaculo(pPoca);
 

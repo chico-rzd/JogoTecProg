@@ -1,9 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <utility>
 #include "enum.h"
 
 namespace Entidades {
-    class Ente;
+    class Ente;     
 }
 
 namespace Gerenciadores {
@@ -11,8 +12,9 @@ namespace Gerenciadores {
 class Gerenciador_Grafico{
     private:
 
+        typedef std::pair<std::string, Texturas::Modo> ChaveTextura;
         sf::RenderWindow Window;
-        std::map<std::string, sf::Texture> texturas;
+        std::map<ChaveTextura, sf::Texture> texturas;
         sf::Clock relogio;
 
         float deltaTempo;
@@ -31,7 +33,7 @@ class Gerenciador_Grafico{
         void mostrarConteudoJanela();
         bool teclaPressionada(Movimento::Teclas t);
 
-        sf::Texture& carregarTextura(const std::string& caminho);
+        sf::Texture& carregarTextura(const std::string& caminho, Texturas::Modo modo = Texturas::ESTICAR_FIGURA);
         
         void atualizaDeltaTempo();
         float getDeltaTempo() const;

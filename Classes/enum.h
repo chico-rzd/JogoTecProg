@@ -1,5 +1,9 @@
 #pragma once
 
+namespace Texturas {
+    enum Modo{ ESTICAR_FIGURA, REPETIR_FIGURA };
+}
+
 namespace Movimento  {
 
     typedef enum  

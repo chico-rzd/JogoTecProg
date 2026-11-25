@@ -23,9 +23,10 @@ void Gerenciador_Grafico::desenharEnte(Entidades::Ente* pE)
     }
 }
 
-sf::Texture& Gerenciador_Grafico::carregarTextura(const std::string& caminho)
+sf::Texture& Gerenciador_Grafico::carregarTextura(const std::string& caminho, Texturas::Modo modo)
 {
-    std::map<std::string, sf::Texture>::iterator it = texturas.find(caminho);
+    ChaveTextura chave= std::make_pair(caminho, modo);
+    std::map<ChaveTextura, sf::Texture>::iterator it = texturas.find(chave);
     
     if(it != texturas.end())
         return it->second;
@@ -34,7 +35,8 @@ sf::Texture& Gerenciador_Grafico::carregarTextura(const std::string& caminho)
     if(!texturaNova.loadFromFile(caminho))
         throw std::runtime_error("Erro ao carregar a textura: " + caminho);
     
-    it = texturas.insert(std::make_pair(caminho, texturaNova)).first;
+    it = texturas.insert(std::make_pair(chave, texturaNova)).first;
+    it->second.setRepeated(modo == Texturas::REPETIR_FIGURA);
     return it->second;
 }
 
