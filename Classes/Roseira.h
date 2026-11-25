@@ -1,11 +1,12 @@
 #pragma once
 #include "Obstaculo.h"
+#include "Jogador.h"
 
 namespace Obstaculos {
     class Roseira : public Obstaculo 
     {
         private:
-            float elasticidade; //pensar em outro atributo
+            float danosidade; //pensar em outro atributo
             
         public:
             Roseira(float elast = 50);

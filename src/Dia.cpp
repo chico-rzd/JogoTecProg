@@ -2,7 +2,7 @@
 
 namespace Fases
 {
-    Dia::Dia() : Fase(), maxInimMedios(5), pCachorro(NULL), pPoca(NULL)
+    Dia::Dia() : Fase(), maxInimMedios(5), pCachorro(NULL), pPoca(NULL), pRoseira(NULL)
     {
         inicializar();      
         criarInimigos();
@@ -19,6 +19,7 @@ namespace Fases
     void Dia::criarObstaculos()
     {
         criarObstMedios();
+        criarObstDificeis();
     }
 
     void Dia::criarInimMedios() 
@@ -33,6 +34,12 @@ namespace Fases
         pPoca = new Obstaculos::Poça(600.0f, 344.0f, 0);
         lista_ents->incluir(pPoca);
         GC->incluirObstaculo(pPoca);
-
+        
     }   
+    void Dia::criarObstDificeis()
+    {
+        pRoseira = new Obstaculos::Roseira(900.0f, 502.0f, 0);
+        lista_ents->incluir(pRoseira);
+        GC->incluirObstaculo(pRoseira);
+    }
 }

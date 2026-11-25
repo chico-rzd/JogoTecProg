@@ -17,7 +17,14 @@ namespace Obstaculos {
 
     void Poça::salvarDataBuffer() {}
     void Poça::executar() {}    
-    void Poça::obstaculizar(Entidades::Personagens::Jogador* pJogador) {}
+
+    void Poça::obstaculizar(Entidades::Personagens::Jogador* pJogador) 
+    {
+        if(pJogador == NULL) return;
+
+        pJogador->setLentidao(0.4f);
+    }
+    
     void Poça::salvar() {}
 
     short int Poça::getDanosidade() const {

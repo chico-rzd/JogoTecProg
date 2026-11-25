@@ -1,6 +1,6 @@
 #pragma once
 #include "Obstaculo.h"
-
+#include "Jogador.h"
 
 namespace Obstaculos {
     class Poça : public Obstaculo 
