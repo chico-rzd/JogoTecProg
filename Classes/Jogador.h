@@ -36,7 +36,7 @@ namespace Entidades {
                 void pousar(float yTopo);          
                 void baterCabeca(float yBase);     
                 void setLentidao(float fator);     
-                void sofrerDano(int dano); 
+                void sofrerDano(short int dano); 
                 
                 sf::FloatRect getLimitesEntidade() const;
         
@@ -44,7 +44,7 @@ namespace Entidades {
                 Jogador();
                 Jogador(float x_, float y_, Movimento::Controles control, Estilos::Cores corJog);   
                 ~Jogador();
-                Jogador& operator-=(int dano);
+                Jogador& operator-=(short int dano);
 
         };
 

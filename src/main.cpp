@@ -1,9 +1,14 @@
 #include "Jogo.h"
 #include <iostream>
+#include <cstdlib>
+#include <time.h>
+
 
 int main()
 {   
-    int escolha;
+    srand(time(NULL)); 
+
+    int escolha;    
 
     std::cout << "Um ou Dois players? Digite 1 para um ou 2: " << std::endl;
     std::cin >> escolha;

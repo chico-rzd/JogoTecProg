@@ -29,5 +29,6 @@ namespace Entidades {
         void desenhar();
         sf::RectangleShape* getFigura() const;
         static void setGG(Gerenciadores::Gerenciador_Grafico* pG);
+
     };
 }

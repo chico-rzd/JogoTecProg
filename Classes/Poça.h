@@ -7,10 +7,11 @@ namespace Obstaculos {
     {
         private:
             short int danosidade;
+            float tempo;
 
         public:
-            Poça(short int dano = 50);
-            Poça(float x_, float y_, short int dano = 50);
+            Poça(short int dano);
+            Poça(float x_, float y_, short int dano);
             ~Poça();
         public:
             short int getDanosidade() const;

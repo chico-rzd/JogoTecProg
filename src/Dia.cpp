@@ -31,7 +31,7 @@ namespace Fases
 
     void Dia::criarObstMedios() 
     {
-        pPoca = new Obstaculos::Poça(600.0f, 344.0f, 0);
+        pPoca = new Obstaculos::Poça(600.0f, 344.0f, 1); //colocar algum N inteiro na criação da poça altera o quanto de dano é causado
         lista_ents->incluir(pPoca);
         GC->incluirObstaculo(pPoca);
         

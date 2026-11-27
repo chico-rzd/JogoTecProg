@@ -26,7 +26,7 @@ Personagens::Jogador::~Jogador() {}
 
 void Personagens::Jogador::colidir(Inimigo* pInimigo){}
 
-Personagens::Jogador& Personagens::Jogador::operator-=(int dano)
+Personagens::Jogador& Personagens::Jogador::operator-=(short int dano)
 {
     num_vidas -= dano;
     if(num_vidas < 0)
@@ -138,7 +138,7 @@ void Personagens::Jogador::setLentidao(float fator)
     fatorVelocidade = fator;
 }
 
-void Personagens::Jogador::sofrerDano(int dano)
+void Personagens::Jogador::sofrerDano(short int dano)
 {
     if(tempoInvulneravel > 0.0f)
         return;
