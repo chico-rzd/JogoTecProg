@@ -1,7 +1,7 @@
 #pragma once
 #include "Fase.h"
 #include "Cachorro.h"
-#include "Poça.h"
+#include "Poca.h"
 #include "Roseira.h"
 
 namespace Fases
@@ -11,7 +11,7 @@ namespace Fases
         private:
             const int maxInimMedios;
             Entidades::Personagens::Cachorro* pCachorro;
-            Obstaculos::Poça* pPoca;
+            Obstaculos::Poca* pPoca;
             Obstaculos::Roseira* pRoseira;
 
         protected:

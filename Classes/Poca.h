@@ -3,15 +3,15 @@
 #include "Jogador.h"
 
 namespace Obstaculos {
-    class Poça : public Obstaculo 
+    class Poca : public Obstaculo 
     {
         private:
             short int danosidade;
 
         public:
-            Poça(short int dano = 50);
-            Poça(float x_, float y_, short int dano = 50);
-            ~Poça();
+            Poca(short int dano = 50);
+            Poca(float x_, float y_, short int dano = 50);
+            ~Poca();
         public:
             short int getDanosidade() const;
             void setDanosidade(short int dano);

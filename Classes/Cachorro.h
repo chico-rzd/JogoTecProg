@@ -19,10 +19,12 @@ namespace Entidades
 
                 void danificar(Entidades::Personagens::Jogador* p);
                 void mover();
+                void pular();
                 void executar();
                 void salvar();
 
                 void setJogador(Jogador* j) { pJogador = j; }
+                sf::FloatRect getLimitesEntidade() const;
 
 
         };

@@ -68,6 +68,7 @@ namespace Fases
 
         pFigura->setSize(sf::Vector2f(1280.0f, 700.0f));
         pFigura->setPosition(0.f, 0.f);
+
     }
 
     void Fase::incluirJogador(Entidades::Personagens::Jogador* pJogador)
@@ -75,4 +76,5 @@ namespace Fases
         lista_ents->incluir(pJogador);
         GC->incluirJogador(pJogador);
     }
+    
 }
