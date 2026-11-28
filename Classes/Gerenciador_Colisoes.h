@@ -1,24 +1,15 @@
 #pragma once
+
+#include "Entidade.h"
+#include "Inimigo.h"
+#include "Jogador.h"
+#include "NovelodeLa.h"
+#include "Obstaculo.h"
+
 #include <vector>
 #include <list>
 #include <set>
 
-namespace Entidades
-{
-    class Entidade;
-    class Projetil;
-
-    namespace Personagens
-    {
-        class Inimigo;
-        class Jogador;
-    }
-}
-
-namespace Obstaculos
-{
-    class Obstaculo;
-}
 
 namespace Gerenciadores
 {
@@ -27,7 +18,7 @@ namespace Gerenciadores
         private:
             std::vector<Entidades::Personagens::Inimigo*> LIs;
             std::list<Obstaculos::Obstaculo*> LOs;
-            std::set<Entidades::Projetil*> LPs;
+            std::set<Entidades::NovelodeLa*> LPs;
 
             Entidades::Personagens::Jogador* pJog1;
             Entidades::Personagens::Jogador* pJog2;
@@ -35,8 +26,9 @@ namespace Gerenciadores
             const bool verificarColisao(Entidades::Entidade* pe1, Entidades::Entidade* pe2);
             void tratarColisoesJogObstaculos();
             void tratarColisoesJogObstaculos(Entidades::Personagens::Jogador* pJog);
+            void tratarColisoesInimigos(Entidades::Personagens::Jogador* pJog);
             void tratarColisoesInimigos();
-            void tratarColisoesProjeteis();
+            void tratarColisoesProjeteis(Entidades::Personagens::Jogador* pJog);
 
         public:
             Gerenciador_Colisoes();
@@ -44,7 +36,7 @@ namespace Gerenciadores
 
             void incluirInimigo(Entidades::Personagens::Inimigo* pi);
             void incluirObstaculo(Obstaculos::Obstaculo* po);
-            void incluirProjetil(Entidades::Projetil* pj);
+            void incluirProjetil(Entidades::NovelodeLa* pj);
             void incluirJogador(Entidades::Personagens::Jogador* pJog);
 
             void executar();

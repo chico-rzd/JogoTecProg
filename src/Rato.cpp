@@ -4,62 +4,78 @@
 
 namespace Entidades {
 
-Personagens::Rato::Rato(float posX, float posY, float limE, float limD, float vel, int dirc, int n_mal)
- : Inimigo(posX, posY, limE, limD, vel, dirc, n_mal), 
-   pJogador (NULL)
-{
+    Personagens::Rato::Rato(float posX, float posY, float limE, float limD, float vel, int dirc, int n_mal = 1)
+    : Inimigo(posX, posY, limE, limD, vel, dirc, n_mal), 
+    pJogador (NULL)
+    {
 
-    carregaImagem("assets/rato.png");
+        carregaImagem("assets/rato.png");
 
-    if(pFigura)
-        pFigura->setSize(sf::Vector2f(150.0f, 150.0f));
+        if(pFigura)
+            pFigura->setSize(sf::Vector2f(150.0f, 150.0f));
 
-    atualizarFigura();
+        atualizarFigura();
 
-}
+    }
 
-Personagens::Rato::~Rato()
-{
+    Personagens::Rato::~Rato()
+    {
 
-}
+    }
 
-void Personagens::Rato::danificar(Personagens::Jogador* p) //Objetivo: tirar 1 ponto do jogador
-{
-    if(p == NULL){
+    void Personagens::Rato::danificar(Personagens::Jogador* p) // A fazer: Objetivo: tirar dois pontos do Jogador
+    {
+        if(p == NULL){
         return;
-    }
+        }
     
-    p->setVidas(p->getVidas() - 1);
+        p->sofrerDano(nivel_maldade);
 
-}
-
-void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma 
-{
-    x += velocidade * direcao * pGG->getDeltaTempo();
-
-    if (x >= lim_direita)
-    {
-        x = lim_direita;
-        direcao = -1;
-    }
-    else if (x <= lim_esquerda)
-    {
-        x = lim_esquerda;
-        direcao = 1;
     }
 
-    atualizarFigura();
+    void Personagens::Rato::mover() // Objetivo: ficar em cima da plataforma 
+    {
+        x += velocidade * direcao * pGG->getDeltaTempo();
 
-}
+        if (x >= lim_direita)
+        {
+            x = lim_direita;
+            direcao = -1;
+        }
+        else if (x <= lim_esquerda)
+        {
+            x = lim_esquerda;
+            direcao = 1;
+        }
 
-void Personagens::Rato::executar()
-{
-    mover();
-}
+        atualizarFigura();
 
-void Personagens::Rato::salvar()
-{
+    }
 
-}
+    void Personagens::Rato::executar() // Fazer o cachorro pular
+    {
+        mover();
+    }
+
+    void Personagens::Rato::salvar()
+    {
+
+    }
+
+    sf::FloatRect Personagens::Rato::getLimitesEntidade() const
+    {
+        const float margemX = 0.15f;
+        const float margemY = 0.20f;
+        const float proporcaoLargura = 0.62f;
+        const float proporcaoAltura = 0.40f;
+
+        sf::FloatRect figura = Entidade::getLimitesEntidade();
+
+        return sf::FloatRect(figura.left + margemX * figura.width,
+                            figura.top + margemY * figura.height,
+                            proporcaoLargura * figura.width,
+                            proporcaoAltura * figura.height);
+                         
+    }
 
 }

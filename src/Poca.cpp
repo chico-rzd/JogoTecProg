@@ -1,4 +1,4 @@
-#include "Poça.h"
+#include "Poca.h"
 #include "Ente.h"
 #include "Jogador.h"
 #include "Gerenciador_Grafico.h"
@@ -8,21 +8,21 @@ static const char* const caminhoPoca = "assets/poca_cortada.png";
 
 namespace Obstaculos {
 
-Poça::Poça(float x_, float y_, short int dano) : Obstaculo(x_, y_), danosidade(dano), tempo(0.0f)
+Poca::Poca(float x_, float y_, short int dano) : Obstaculo(x_, y_), danosidade(dano), tempo(0.0f)
 {
     danoso = false;
     criaElementos(89.0f, 16.0f, caminhoPoca);
 }
-Poça::Poça(short int dano) : Obstaculo(), danosidade(dano), tempo(0.0f){
-    danoso = false; //qnd danoso é falso, a poça so desacelera. Quando é true, desalacera + causa dano
+Poca::Poca(short int dano) : Obstaculo(), danosidade(dano), tempo(0.0f){
+    danoso = false; //qnd danoso é falso, a Poca so desacelera. Quando é true, desalacera + causa dano
     criaElementos(89.0f, 16.0f, caminhoPoca);
 
 }
-Poça::~Poça() {};   
+Poca::~Poca() {};   
 
-void Poça::salvarDataBuffer() {}
+void Poca::salvarDataBuffer() {}
 
-void Poça::executar() {
+void Poca::executar() {
     tempo += pGG->getDeltaTempo();
     const float intervaloSegundos = 2.5f;
 
@@ -40,7 +40,7 @@ void Poça::executar() {
     }
 }    
 
-void Poça::obstaculizar(Entidades::Personagens::Jogador* pJogador) 
+void Poca::obstaculizar(Entidades::Personagens::Jogador* pJogador) 
 {
     if(pJogador == NULL) return;
     pJogador->setLentidao(0.4f); 
@@ -49,13 +49,13 @@ void Poça::obstaculizar(Entidades::Personagens::Jogador* pJogador)
 
 }
 
-void Poça::salvar() {}
+void Poca::salvar() {}
 
-short int Poça::getDanosidade() const {
+short int Poca::getDanosidade() const {
     return danosidade;
 }
 
-void Poça::setDanosidade(short int dano){
+void Poca::setDanosidade(short int dano){
     danosidade = dano;
 }
 }

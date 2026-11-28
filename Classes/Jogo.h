@@ -11,7 +11,7 @@ namespace Entidades {
 namespace Obstaculos {
     class Plataforma;
     class Roseira;
-    class Poça;
+    class Poca;
 }
 
 class Jogo {

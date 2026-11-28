@@ -22,11 +22,14 @@ namespace Entidades
                 ~Rato();
 
                 void danificar(Entidades::Personagens::Jogador* p);
-                void executar() ;
+                void executar();
                 void mover() ;
+                void pular();
                 void salvar();
 
                 void setJogador(Jogador* j) { pJogador = j; }
+                sf::FloatRect getLimitesEntidade() const;
+        
 
 
         };

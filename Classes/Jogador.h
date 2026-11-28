@@ -16,9 +16,11 @@ namespace Entidades {
             protected:  
 
                 int pontos;
+                bool morto;
                 float velocidade;
                 float fatorVelocidade;
                 float tempoInvulneravel;
+                float velocidadeEmpurrao;
 
                 Movimento::Controles controles;
                 Estilos::Cores corJogador;
@@ -31,6 +33,7 @@ namespace Entidades {
                 void executar();
                 void salvar();
                 void mover();
+                void morrer();
                 int retornaIdJog();//tirar
 
                 void pousar(float yTopo);          

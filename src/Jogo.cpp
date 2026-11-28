@@ -1,8 +1,7 @@
 #include "Jogo.h"
 #include "Jogador.h"
-#include "Plataforma.h"
-#include "Roseira.h"
-#include "Poça.h"
+#include "Fase.h"
+#include "Dia.h"
 #include "Gerenciador_Grafico.h"
 
 Jogo::Jogo(int numJogadores) : pJogador1(NULL), pJogador2(NULL), /*pChao(NULL)*/ pFase(NULL)

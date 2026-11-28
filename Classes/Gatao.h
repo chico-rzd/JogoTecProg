@@ -22,12 +22,15 @@ namespace Entidades
                 Gatao(float posX, float posY, float limE, float limD, float vel, int dirc, int n_mal);
                 ~Gatao();
 
+                
                 void danificar(Entidades::Personagens::Jogador* p);
-                void mover() ;
+                void mover();
+                void perseguir(Entidades::Personagens::Jogador* p);
                 void executar();
                 void salvar();
 
                 void setJogador(Jogador* j) { pJogador = j; }
+                sf::FloatRect getLimitesEntidade() const;
         };
     }
 }
